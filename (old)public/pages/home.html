@@ -1,0 +1,128 @@
+<html>
+
+<head>
+    <title>SiteDoctor</title>
+    <!--<link rel="stylesheet" type="text/css" href="css/homestyle.css"/>-->
+    <link rel="stylesheet" type="text/css" href="https://johnlins.github.io/SiteDoctor/UI/css/homestyle.css"/>
+    <link href="https://fonts.googleapis.com/css?family=Ubuntu&display=swap" rel="stylesheet">
+     <link rel="icon" type="image/png" href="assets/logo.png" />
+   <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>-->
+</head>
+
+<body>
+    <header>
+        <div id="banner">
+            <nav id="navigation">
+                <img src="assets/logo.png" style="height: 2.7vw; float: left; margin-top: -.3vw;" class="nav_item"/>
+                <center>
+                    <strong>
+                <p style="top: .5vw; left: 45vw;" class="nav_item">SiteDoctor</p>
+                    </strong>
+                </center>
+                
+                <button class="log_button" style="margin-right: 2vw;">Signup</button>
+                <button class="log_button">Login</button>
+            </nav>
+            
+            
+            <p id="banner_text">Check Your Websites ..... For <span style="color:palegreen">Free</span></p>
+            
+            <center>
+                <div>
+                    <form action="/process" method="POST">
+                        <input type="text" name="websiteUrl" id="websiteUrl" placeholder="Enter Websites URL: "/>
+                        <input type="submit" id="submit_button" value="Test"/>
+                    </form>
+                </div>
+            </center>
+        </div>
+        <center>
+        <img src="assets/wavesfliped.svg" style=" -webkit-transform: scaleY(-1); transform: scaleY(-1); margin-top: -7vw; filter: drop-shadow(0 0 0.45vw gray); height: auto; width: 177.6%; z-index: -1;"/>
+        </center>
+            </header>
+
+    <main>
+        
+        
+
+    <!--    
+    <section class="down_arrow">
+        <center>
+        <img class="down_arrow" src="https://cdn0.iconfinder.com/data/icons/social-messaging-ui-color-shapes/128/arrow-down-circle-blue-512.png" alt="" style="height: 3vw; position: absolute;">
+        </center>
+    </section>
+
+    <script>
+    $(function(){
+        loopDown();
+    });
+
+    function loopDown(){
+        $(".down_arrow").animate({
+            marginTop : 10
+            },
+            500, function() {
+            loopUp();
+        });
+    }
+
+    function loopUp(){
+        $(".down_arrow").animate({
+            marginTop : 0
+            },
+            500, function() {
+            loopDown();
+        });
+    }
+	
+</script>-->
+        
+        
+        <div class="fact_box" style="top: 100%; left: 10vw; height: 9vw; width: auto;">
+            <p class="fact_text">User Friendly Dashboard.</p></br>
+        <img src="https://cdn.arstechnica.net/wp-content/uploads/2017/02/git-branching.png" style="height: 20vw; width: auto;"/>
+        </div>
+    
+         <div class="fact_box" style="top: 140%; right: 10vw; height: 9vw; width: auto;">
+            <p class="fact_text">Check Size.</p></br>
+        <img src="https://cdn.arstechnica.net/wp-content/uploads/2017/02/git-branching.png" style="height: 20vw; width: auto;"/>
+        </div>
+    
+         <div class="fact_box" style="top: 180%; left: 10vw; height: 9vw; width: auto;">
+            <p class="fact_text">Check Speed.</p></br>
+        <img src="https://cdn.arstechnica.net/wp-content/uploads/2017/02/git-branching.png" style="height: 20vw; width: auto;"/>
+        </div>
+<!--
+        <p class="fact_text">Check Size.</p></br>
+    
+        <p class="fact_text">Check Speed.</p></br>
+
+        <p class="fact_text">Check Rendering.</p></br>
+
+        <p class="fact_text">Check SEO.</p></br>
+-->
+        <style>
+            .fact_text {
+                color: #5351B5; 
+                font-size: 1.5em; 
+                position: relative;
+                font-weight: bold;
+                text-align: center;
+            }
+            
+            .fact_box {
+                position: absolute;
+                display: block;
+                
+            }
+        </style>
+
+        
+        
+    </main>
+    <footer>
+    </footer>
+    
+</body>
+
+</html>

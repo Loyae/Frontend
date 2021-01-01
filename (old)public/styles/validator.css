@@ -1,0 +1,83 @@
+#validator_content ol {
+	font-family: sans-serif;
+	font-size: inherit;
+	padding: 3%;
+	margin: 0;
+	padding: 0;
+	font: caption;
+}
+
+#validator_content li {
+  border-radius: 1.3vw;
+  margin-top: .5vw;
+  border: .1vw solid darkred;
+}
+
+#validator_content ol {
+	margin: 1.5em 0;
+	padding: 0 2.5em;
+  font-size: 2vw;
+}
+
+#validator_content li {
+	margin: 1vw;
+	padding: 0.5em;
+}
+
+#validator_content li ol {
+	padding-right: 0;
+	margin-top: 0.5em;
+	margin-bottom: 0;
+}
+
+#validator_content li li {
+	padding-right: 0;
+	padding-bottom: 0.2em;
+	padding-top: 0.2em;
+}
+
+#validator_content .warning {
+	color: black;
+	background-color: #ffffcc;
+}
+
+#validator_content .error {
+	color: black;
+	background-color: #ffcccc;
+}
+
+#validator_content li p {
+	margin: 0;
+}
+
+#validator_content .lf {
+	color: #222222;
+}
+
+#validator_content b {
+	color: black;
+	background-color: #ff6666;
+}
+
+#validator_content ol.source li {
+	padding-top: 0;
+	padding-bottom: 0;
+}
+
+#validator_content ol.source b, ol.source .b {
+	color: black;
+	background-color: #ffffcc;
+	font-weight: bold;
+}
+
+#validator_content code {
+	white-space: pre;
+	white-space: -pre-wrap;
+	white-space: -o-pre-wrap;
+	white-space: -moz-pre-wrap;
+	white-space: -hp-pre-wrap;
+	white-space: pre-wrap;
+	word-wrap: break-word;
+}
+
+

@@ -1,0 +1,122 @@
+<html>
+
+<head>
+    <title>SiteDoctor</title>
+    <!--<link href="https://html5.validator.nu/style.css" rel="stylesheet">-->
+    <link href="https://fonts.googleapis.com/css?family=Ubuntu&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" type="text/css" href="../styles/dashboard.css" />
+    <!--<link rel="stylesheet" type="text/css" href="https://johnlins.github.io/SiteDoctor/UI/css/boxstyle.css"/>-->
+    <!--<link rel="stylesheet" type="text/css" href="css/processorstyle.css" />-->
+    <!--<link rel="stylesheet" type="text/css" href="../UI/css/boxstyle.css" />-->
+     <link rel="stylesheet" type="text/css" href="../styles/boxes.css" />
+    <!--<link rel="icon" type="image/png" href="assets/logo.png" />-->
+   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Muli:wght@200;300;400;500;600;700;800;900&display=swap">
+    <script src="../scripts/main.js"></script>
+</head>
+<body>
+    <header>
+        <div id="banner">
+            <center>
+                <div>
+                        <textarea type="text" id="url-input" placeholder="Enter Websites URL: "></textarea>
+                        <button onclick="request()" type="submit" id="submit_button" value="Test"></button>
+                </div>
+            </center>
+        </div>
+
+
+
+        <div id="side_nav">
+            <div id="top_side_nav">
+
+                <img src="assets/logo.png" style="height: 2vw; width: auto; padding: 8.5%; position: absolute;" />
+                <p style="color: white; font-weight: 600; top:1.4vw; left:3.5vw; position: absolute; font-size: 1vw;">SiteDoctor</p>
+
+            </div>
+            <div style="margin-top: 5vw;">
+                <p class="side_nav_item">LinsMedia.tk</p><br>
+                <a class="side_nav_item" href="#performance_section">Performance</a><br>
+                <a class="side_nav_item" href="#seo_section">SEO</a><br>
+                <a class="side_nav_item" href="#">User Analytics</a><br>
+            </div>
+
+        </div>
+    </header>
+
+    <main>
+        <!--MAIN AREA-->
+
+
+        <div id="size_box" class="box">
+            <div class="box_header" class="box">
+                <p class="box_title">Size</p>
+            </div>
+
+            <div class="box_content">
+                
+                <span><span>
+                
+            </div>
+        </div>
+
+
+        <div id="validator_box" class="box">
+            <div class="box_header" class="box">
+                <p class="box_title">Code Validator</p>
+            </div>
+
+            <div class="box_content">
+               <!-- <iframe src="validatorFrame.html"></iframe>-->
+               <div id="validator_content" style="height:120px;width:120px;border:1px solid #ccc;font:16px/26px Georgia, Garamond, Serif;overflow:auto;">
+                <span></span>
+               </div>
+            </div>
+        </div>
+
+
+        <div id="metatag_box" class="box">
+            <div class="box_header" class="box">
+                <p class="box_title">Meta Tags</p>
+            </div>
+
+            <div class="box_content">
+                <span></span>
+            </div>
+        </div>
+
+
+        <div id="speeds_box" class="box">
+            <div class="box_header" class="box">
+                <p class="box_title">Speeds</p>
+            </div>
+
+            <div class="box_content">
+                <p>
+                    Speeds
+                </p>
+            </div>
+        </div>
+
+
+        <div id="sitemap_box" class="box">
+            <div class="box_header" class="box">
+                <p class="box_title">Sitemap</p>
+            </div>
+
+            <div class="box_content">
+                <p>
+                    <span></span>
+                </p>
+            </div>
+        </div>
+
+
+
+
+
+    </main>
+    <footer>
+    </footer>
+</body>
+
+</html>

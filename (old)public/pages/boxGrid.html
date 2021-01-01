@@ -1,0 +1,87 @@
+<div class="section group">
+	<div class="col span_1_of_4">
+	<h6>Title<h6/>
+	</div>
+    
+	<div class="col span_1_of_4">
+	<h6>Title<h6/>
+	</div>
+    
+	<div class="col span_1_of_4">
+	<h6>Title<h6/>
+	</div>
+    
+	<div class="col span_1_of_4">
+	<h6>Title<h6/>
+	</div>
+</div>
+    
+    
+    <div class="section group">
+	<div class="col span_1_of_4">
+	<h6>Title<h6/>
+	</div>
+    
+	<div class="col span_1_of_4">
+	<h6>Title<h6/>
+	</div>
+    
+	<div class="col span_1_of_4" style="width: 80px;">
+	<h6>Title<h6/>
+	</div>
+  
+</div>
+
+
+<style>
+/*  SECTIONS  */
+.section {
+	clear: both;
+	padding: 0px;
+	margin: 6px;
+}
+
+/*  COLUMN SETUP  */
+.col {
+	display: block;
+	float:left;
+	margin: 1px 0 1px 1.6%;
+  background-color: blue;
+  height: 100px;
+  width: 20%;
+  border-radius: 15px;
+  box-shadow: 0px 0 25px 0 lightblue;
+}
+
+.col h6{
+  margin: 7px;
+  color: white;
+}
+.col:first-child { margin-left: 0; }
+
+/*  GROUPING  */
+.group:before,
+.group:after { content:""; display:table; }
+.group:after { clear:both;}
+.group { zoom:1; /* For IE 6/7 */ }
+/*  GRID OF FOUR  */
+.span_4_of_4 {
+	width: 100%;
+}
+.span_3_of_4 {
+	width: 74.6%;
+}
+.span_2_of_4 {
+	width: 49.2%;
+}
+.span_1_of_4 {
+	width: 23.8%;
+}
+
+/*  GO FULL WIDTH BELOW 480 PIXELS */
+@media only screen and (max-width: 480px) {
+	.col {  margin: 1% 0 1% 0%; }
+	.span_1_of_4, .span_2_of_4, .span_3_of_4, .span_4_of_4 { width: 100%; }
+}
+
+</style>

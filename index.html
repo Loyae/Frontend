@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" >
+		<title>Loyae | Machine Learning For Site Optimization</title>
+		<meta name="description" content="Seamlessly using machine learning to optimise web pages for SEO and SEM">
+		<meta name="keywords" content="Loyae, Machine Learning For Site Optimization, generate meta data, generate meta description">
+		<meta name="author" content="John Lins">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="icon" href="assets/logos/logo.png" type="image/x-icon">
+		<!-- Google Fonts -->
+		<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@100;200;300;400;500;600;700;800;900&family=DM+Sans:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+		<!-- Bootstrap 4.5.2 CSS -->
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+		<!-- Slick 1.8.1 jQuery plugin CSS (Sliders) -->
+		<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+		<!-- Fancybox 3 jQuery plugin CSS (Open images and video in popup) -->
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
+		<!-- AOS 2.3.4 jQuery plugin CSS (Animations) -->
+		<link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+		<!-- FontAwesome CSS -->
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+		<!-- Startup CSS (Styles for all blocks) - Remove ".min" if you would edit a css code -->
+		<link href="landing/css/style.min.css" rel="stylesheet" />
+		<link href="landing/css/custom.css" type="text/css" rel="stylesheet"/>
+		<!-- jQuery 3.5.1 -->
+		<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+
+
+		<script src="scripts/main.js"></script>
+	</head> 
+	<body>
+<!-- Navigation Mobile type 1 -->
+	<a href="#" class="open_menu bg-light radius_full">
+		<i class="fas fa-bars lh-40">
+		</i>
+	</a>
+	<div class="navigation_mobile bg-dark type1">
+		<a href="#" class="close_menu color-white">
+			<i class="fas fa-times">
+			</i>
+		</a>
+		<div class="px-40 pt-60 pb-60 inner">
+			<div class="logo color-white mb-30">
+				<img src="assets/logos/logoWhite.png" height="40px" style="margin-top: -4px;"/> Loyae
+			</div>
+			<div>
+				<a href="#" class="f-heading f-22 link color-white mb-20">
+					Home
+				</a>
+			</div>
+			<div>
+				<a href="pages/dashboard.html" class="f-heading f-22 link color-white mb-20">
+					Launch
+				</a>
+			</div>
+			<div>
+				<a href="#" class="f-heading f-22 link color-white mb-20">
+					API
+				</a>
+			</div>
+			<div>
+				<a href="#features" class="f-heading f-22 link color-white mb-20">
+					About
+				</a>
+			</div>
+			<div>
+				<a href="https://tripetto.app/run/ETZVY7C3IT" class="f-heading f-22 link color-white mb-20">
+					Newsletter
+				</a>
+			</div>
+			<!--<div>
+				<a href="#" class="link color-white op-3 mb-15">
+					Help
+				</a>
+			</div>
+			<div>
+				<a href="#" class="link color-white op-3 mb-15">
+					F.A.Q.
+				</a>
+			</div>
+			<div>
+				<a href="#" class="link color-white op-3 mb-15">
+					Support
+				</a>
+			</div>
+			<div>
+				<a href="#" class="link color-white op-3 mb-15">
+					About Us
+				</a>
+			</div>
+			<div>
+				<a href="#" class="link color-white op-3 mb-15">
+					Blog
+				</a>
+			</div>
+			<div>
+				<a href="#" class="link color-white op-3 mb-15">
+					Careers
+				</a>
+			</div>-->
+			<div class="socials mt-40">
+				<a href="https://twitter.com/loyaecom" target="_blank" class="link color-white f-18 mr-20">
+					<i class="fab fa-twitter">
+					</i>
+				</a>
+				<a href="https://github.com/Loyae" target="_blank" class="link color-white f-18 mr-20">
+					<i class="fab fa-github">
+					</i>
+				</a>
+				<a href="#" target="_blank" class="link color-white f-18 mr-20">
+					<i class="fab fa-angellist">
+					</i>
+				</a>
+				<a href="https://www.linkedin.com/company/loyae" target="_blank" class="link color-white f-18 mr-20">
+					<i class="fab fa-linkedin">
+					</i>
+				</a>
+				<a href="https://discord.gg/rtaDgSYdQU" target="_blank" class="link color-white f-18 mr-20">
+					<i class="fab fa-discord">
+					</i>
+				</a>
+				<a href="https://loyae.slack.com/" target="_blank" class="link color-white f-18 mr-20">
+					<i class="fab fa-slack">
+					</i>
+				</a>
+			</div>
+			<div class="mt-50 f-14 light color-white op-3 copy">
+				© <span id="year"></span> Loyae. All rights reserved.
+			</div>
+					<script>
+                        document.getElementById("year").innerHTML = new Date().getFullYear();
+                    </script>
+		</div>
+	</div>
+	<!-- Header 1 -->
+		<header class="pt-195 pb-110 bg-light header_1">
+			<nav class="header_menu_1 pt-30 pb-30 mt-30">
+				<div class="container px-xl-0">
+					<div class="row justify-content-center align-items-center f-18 medium">
+						<div class="col-lg-3 logo" data-aos="fade-down" data-aos-delay="1000">
+							<span>
+								<img src="assets/logos/logo.png" height="40px" style="margin-top: -4px;"/> Loyae <span style="font-weight: 200; font-size: 20px;">by John Lins</span>
+							</span>
+						</div>
+						<div class="col-lg-6 text-center" data-aos="fade-down" data-aos-delay="750">
+							<a href="#" class="link color-heading mx-15">
+								Home
+							</a>
+							<a href="#features" class="link color-heading mx-15">
+								Features
+							</a>
+							<a href="#" class="link color-heading mx-15">
+								API
+							</a>
+							<a href="#" class="link color-heading mx-15">
+								Contact
+							</a>
+							<!--<a href="#" class="link color-heading f-16 mx-15">
+								<i class="fas fa-search">
+								</i>
+							</a>-->
+						</div>
+						<div class="col-lg-3 col-md-4 col-sm-6 d-flex justify-content-end align-items-center" data-aos="fade-down" data-aos-delay="1000">
+							<!--<a href="#" class="link mr-20 color-heading">
+								Sign In
+							</a>-->
+							<a href="https://tripetto.app/run/ETZVY7C3IT" class="sm action-1">
+								Newsletter Sign Up
+							</a>
+						</div>
+					</div>
+				</div>
+			</nav>
+			<div class="container">
+				<div class="mb-3 logo d-block d-xl-none text-center logo_mobile" data-aos="fade-down" data-aos-delay="0">
+					By John Lins
+				</div>
+				<h1 class="big text-center" data-aos="fade-down" data-aos-delay="0">
+					Introducing Loyae
+				</h1>
+				<div class="mw-600 mx-auto mt-30 f-22 color-heading text-center text-adaptive" data-aos="fade-down" data-aos-delay="250">
+					Seamlessly using machine learning to optimise web pages for SEO and SEM
+				</div>
+				<div class="mt-80 text-center buttons" data-aos="fade-down" data-aos-delay="500">
+					<div>
+						<input type="text" class="btn lg action-1 shadow-hover" placeholder="http://example.com/" style="color: white" id="landing-url-input"/>
+						<style>
+						
+						::placeholder {
+						color: #e3bfbf;
+						}
+						</style>
+						<br/><br/>
+					</div>
+					<div>
+						<a id="launch" onclick="landingRequest()" class="btn lg action-1 shadow-hover" style="background-color: lightcoral">
+							Launch
+						</a>
+						
+					</div>
+				</div>
+			</div>
+		</header>
+
+
+		<!-- Showcase 1 -->
+			<section class="pt-105 pb-95 bg-light showcase_1">
+		<center>
+			<img src="assets/demos/dashboard.png" height="30%" width="80%" id="display-dashboard"/>
+		</center>
+		<style>
+		#display-dashboard {
+			border-radius: 2vw;
+			box-shadow: 0px 0px 25px lightgray;
+		}
+		</style>
+			</section>
+			<!-- Feature 2 -->
+				<section class="pt-105 pb-45 bg-light text-center feature_2" id="features">
+					<div class="container px-xl-0">
+						<div class="row justify-content-center">
+							<div class="col-xl-8 col-lg-10">
+								<h2 class="small" data-aos="fade-down" data-aos-delay="0">
+									Features & About
+								</h2>
+								<div class="mt-35 mb-65 f-22 color-heading text-adaptive description" data-aos="fade-down" data-aos-delay="250">
+									Loyae is an intuitive API and web applicationn that unleashes the power of natrual language processing (NLP) for modern site optimization. 
+									In addition to abstractivaly generating meta data that embodies the meaningful and relative context of your site, Loyae comes with a plethora of additional features... 
+								</div>
+							</div>
+							<div class="col-xl-10">
+								<div class="row justify-content-center">
+									<div class="mb-50 col-md-4 col-sm-8" data-aos="fade-down" data-aos-delay="500">
+										<div class="mb-20 f-18 medium title">
+											Site Statistics
+										</div>
+										<div class="color-heading text-adaptive">
+											Loyae returns insightful statistics  
+                                            including: request speed, 
+											(imported)size, code validation, ext. 
+										</div>
+									</div>
+									<div class="mb-50 col-md-4 col-sm-8" data-aos="fade-down" data-aos-delay="750">
+										<div class="mb-20 f-18 medium title">
+											Bird's Eye View
+										</div>
+										<div class="color-heading text-adaptive">
+											Loyae provides you with a bird's eye
+                                            view of your site's current SEO
+                                            status with details such as your 
+                                            (OG)meta data, sitemap, and more! 
+										</div>
+									</div>
+									<div class="mb-50 col-md-4 col-sm-8" data-aos="fade-down" data-aos-delay="1000">
+										<div class="mb-20 f-18 medium title">
+											Site Compression
+										</div>
+										<div class="color-heading text-adaptive">
+											Loyae's built-in compression algorithm 
+                                            is the cherry on top. 
+                                            Search engines rank websites that load faster, 
+                                            compressing your HTML is the first 
+                                            step in optimizing your site for speed. 
+											
+										</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</section>
+				<!-- Footer 2 -->
+					<footer class="pt-70 pb-65 bg-light text-center footer_2">
+						<div class="container px-xl-0">
+							<div class="row justify-content-center">
+								<div class="col-12 lh-40" data-aos="fade-down" data-aos-delay="0">
+									<a href="#" class="link color-main mx-20">
+										Portfolio
+									</a>
+									<a href="#" class="link color-main mx-20">
+										How it Works
+									</a>
+									<a href="#" class="link color-main mx-20">
+										Pricing
+									</a>
+									<a href="#features" class="link color-main mx-20">
+										About
+									</a>
+									<a href="#" class="link color-main mx-20">
+										Contacts
+									</a>
+								</div>
+								<div class="mt-20 col-12" data-aos="fade-down" data-aos-delay="250">
+									<div class="color-heading text-adaptive">
+										Be sure to take a look at our Terms of Use and Privacy Policy
+									</div>
+								</div>
+							</div>
+						</div>
+					</footer>
+		
+		<!-- gReCaptcha popup (uncomment if you need a recaptcha integration) -->
+		<!--
+		<div class="bg-dark op-8 grecaptcha-overlay"></div>
+		<div class="bg-light radius10 w-350 h-120 px-20 pt-20 pb-20 grecaptcha-popup">
+			<div class="w-full h-full d-flex justify-content-center align-items-center">
+				<div id="g-recaptcha" data-sitekey="PUT_YOUR_SITE_KEY_HERE"></div>
+			</div>
+		</div>
+		<script src="https://www.google.com/recaptcha/api.js?render=explicit" async defer></script>
+		-->
+		<!-- Bootstrap 4.5.2 JS -->
+		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
+		<!-- Fancybox 3 jQuery plugin JS (Open images and video in popup) -->
+		<script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+		<!-- 
+			Google maps JS API 
+			Don't forget to replace the key "AIzaSyDP6Ex5S03nvKZJZSvGXsEAi3X_tFkua4U" to your own! 
+			Learn how to get a key: https://help.designmodo.com/article/startup-google-maps-api/ 
+		-->
+		<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?v=3&key=AIzaSyDP6Ex5S03nvKZJZSvGXsEAi3X_tFkua4U"></script>
+		<!-- Slick 1.8.1 jQuery plugin JS (Sliders) -->
+		<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+		<!-- AOS 2.3.4 jQuery plugin JS (Animations) -->
+		<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+		<!-- Maskedinput jQuery plugin JS (Masks for input fields) -->
+		<script src="landing/js/jquery.maskedinput.min.js"></script>
+		<!-- Startup JS (Custom js for all blocks) -->
+		<script src="landing/js/script.js"></script>
+	</body>
+</html>

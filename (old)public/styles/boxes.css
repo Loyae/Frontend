@@ -1,0 +1,92 @@
+@import url("root.css");
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: arial;
+}
+
+body {
+    background-color: #DCDCE0;
+}
+
+
+/*Boxes*/
+
+#size_box {
+    height: 15vw;
+    width: 30vw;
+    top: 15vw;
+    left: 15vw;
+}
+
+#validator_box {
+    height: 20vw;
+    width: 30vw;
+    top: 33vw;
+    left: 15vw;
+
+}
+
+#validator_frame {
+    border: 0;
+    border-radius: .5vw;
+    background-color: lightgray;
+    height: 87%;
+    width: 100%;
+    overflow-y: scroll;
+}
+
+#metatag_box {
+    height: 38vw;
+    width: 30vw;
+    top: 15vw;
+    left: 48vw;
+}
+
+#speeds_box {
+    height: 38vw;
+    width: 16vw;
+    top: 15vw;
+    left: 81vw;
+}
+
+#sitemap_box {
+    height: 30vw;
+    width: 30vw;
+    top: 56vw;
+    left: 15vw;
+}
+
+
+
+.box {
+    color: black;
+    position: absolute;
+    border-radius: 10px;
+    box-shadow: var(--box-shadow);
+    background-color: white;
+    display: block;
+}
+
+.box_header {
+    height: 2vw;
+    width: 100%;
+    background-color: var(--box-title-color);
+    box-shadow: .0vw .2vw .3vw lightgray;
+    top: 0;
+    border-radius: 10px 10px 0px 0px;
+    position: relative;
+    color: white;
+}
+
+.box_title {
+    padding: .3vw;
+    padding-left: .5vw;
+    font-size: 20px;
+}
+
+.box_content {
+    margin: .5vw;
+    font-size: .5em;
+}
