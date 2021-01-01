@@ -1,5 +1,5 @@
 var URL = "";
-var APIURL = "http://127.0.0.1:8080";
+var APIURL = "https://loyae.johnlins.repl.co";
 
 
 
