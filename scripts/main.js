@@ -1,6 +1,6 @@
 var URL = "";
-var APIURL = "https://loyae.johnlins.repl.co";
-
+var APIURL = "https://ancient-thicket-11529.herokuapp.com"//"http://localhost:8080";
+//https://ancient-thicket-11529.herokuapp.com
 
 
 function request() {
@@ -44,7 +44,16 @@ function stats(){
           document.getElementById("launch-button").click();
         }
       });*/
+
+    var OGMetaTags = [  "keywords",
+		                "description",
+		                "title",
+		                "url",
+		                "site_name",
+                        "image"];
+    var OGMetaTagsHTML = ":";
     
+
     var requestStats = APIURL +`/stats?url=${encodeURIComponent(URL)}`
 
     var request = new XMLHttpRequest()
@@ -61,12 +70,20 @@ function stats(){
 
         //document.querySelector("#sitemap_out").querySelector("span").innerText = response.FetchSitemapLinks
 
-        document.querySelector("#current_og_meta_out").querySelector("span").innerText = response.FetchMetaOG.description
+//document.querySelector("#current_og_meta_out").querySelector("span").innerText = response.FetchMetaOG.description
+
+//for(i = 0; i < OGMetaTags.length; i++){
+            //OGMetaTagsHTML = OGMetaTags[0] + ": " + response.FetchMetaOG.OGMetaTags[0] + "\n";
+            
+        //}
+
+document.querySelector("#current_og_meta_out").querySelector("span").innerText = OGMetaTags[1] + ": " + response.FetchMetaOG.description + "\n" + OGMetaTags[0] + ": " + response.FetchMetaOG.keywords + "\n" + OGMetaTags[2] + ": " + response.FetchMetaOG.title + "\n" + `<img src=\"` + response.FetchMetaOG.image + `\"` + `/>`;
+
         
         /*document.querySelector("#import_sizes_out").querySelector("span").innerText = response.FetchImportSizes.CSSSize
         document.querySelector("#import_sizes_out").querySelector("span").innerText = response.FetchImportSizes.IFRAMESize*/
         document.querySelector("#import_sizes_out").querySelector("span").innerText = response.FetchImportSizes.IMAGESize + " KB"
-//        document.querySelector("#import_sizes_out").querySelector("span").innerText = response.FetchImportSizes.JSSize*/
+        /*document.querySelector("#import_sizes_out").querySelector("span").innerText = response.FetchImportSizes.JSSize*/
 
         document.querySelector("#request_speed_out").querySelector("span").innerText = response.RequestSpeed
     
@@ -80,20 +97,19 @@ function stats(){
 
 
   
+        
 
+        
+        
         
 
 
+        
 
         
 
     /*
-        var OGMetaTags = [  "keywords",
-		                    "description",
-		                    "title",
-		                    "url",
-		                    "site_name",
-                            "image"];
+        
 
         var metaTags = [    "keywords",
                             "description",
@@ -121,9 +137,7 @@ function stats(){
                             "rating",
                             "revisit-after"];
 
-        for(i = 0; i < OGMetaTags.length; i++){
-            document.querySelector("#current_og_meta_out").querySelector("span").innerText = response.FetchMetaOG.OGMetaTags[i]
-        }
+        
 
         for(i = 0; i < metaTags.length; i++){
             document.querySelector("#current_meta_out").querySelector("span").innerText = response.FetchMeta.MetaTags[i]
