@@ -41,6 +41,13 @@
  --search-border-color: #26262f;
 }
 */
+/*
+@media only screen and (max-width: 600px) {
+    #left-side-panel {
+      display: none;
+      visibility: hidden;
+    }
+  }*/
 ::-webkit-input-placeholder {
   color: var(--placeholder-color);
 }

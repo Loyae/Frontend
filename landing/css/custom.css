@@ -1,10 +1,11 @@
 
 .shadow-hover {
     background-color: lightcoral;
+    box-shadow: 0px 0px 10px lightcoral;
 }
 .shadow-hover:hover {
-    -webkit-box-shadow: 0px 0px 10px lightcoral;
-    box-shadow: 0px 0px 10px lightcoral;
+    -webkit-box-shadow: 0px 0px 20px lightcoral;
+    box-shadow: 0px 0px 20px lightcoral;
     cursor: pointer;
 }
     

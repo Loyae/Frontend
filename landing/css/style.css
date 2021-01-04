@@ -303,17 +303,17 @@ b, strong {
 }
 
 ::-moz-selection {
-  background: #E93A7D;
+  background: lightcoral;
   color: #ffffff;
 }
 
 ::-webkit-selection {
-  background: #E93A7D;
+  background: lightcoral;
   color: #ffffff;
 }
 
 ::selection {
-  background: #E93A7D;
+  background: lightcoral;
   color: #ffffff;
 }
 
