@@ -3,6 +3,14 @@ var APIURL = "https://ancient-thicket-11529.herokuapp.com"//"http://localhost:80
 //https://ancient-thicket-11529.herokuapp.com
 
 
+if(sessionStorage.getItem("landingURLInput") != ""){
+    URL = sessionStorage.getItem("landingURLInput");
+    stats();
+    meta();
+    validator();
+    //window.alert(sessionStorage.getItem("landingURLInput"))
+}
+
 function request() {
     
     
@@ -13,21 +21,13 @@ function request() {
     meta();
     validator();
 
-
-    
 }
 
-function landingRequest() {
-    //window.alert("yes") 
-    URL = document.getElementById("landing-url-input").value
-    window.location("pages/dashboard.html");
-    
-   
-    stats(URL);
-    //compress(URL);
-    meta(URL);
-    validator(URL);
-}
+
+
+
+
+
 /*
 function gauge(id, num){
     document.getElementById(id).querySelector(".cover-degree").style= "transform: rotate(" + num.toString() + "deg) translate3d(0, 0, 0)"
@@ -51,7 +51,7 @@ function stats(){
 		                "url",
 		                "site_name",
                         "image"];
-    var OGMetaTagsHTML = ":";
+    var currentMeta = ":";
     
 
     var requestStats = APIURL +`/stats?url=${encodeURIComponent(URL)}`
@@ -60,10 +60,16 @@ function stats(){
     request.open("GET", requestStats)
     request.onload = () => {
         var response = JSON.parse(request.responseText) 
-        document.querySelector("#size_out").querySelector("span").innerText = response.InternalSiteSize + " KB"
+        document.querySelector("#size_out").querySelector(".output").querySelector("span").innerText = response.InternalSiteSize + " KB"
         //gauge("size_out", 40)
 
-        document.querySelector("#current_meta_out").querySelector(".output").querySelector("span").innerText = response.FetchMeta.description
+        document.querySelector("#current_meta_out").querySelector(".output").querySelector("span").innerHTML = 
+        "<b>Description: </b> " + response.FetchMeta.description + "<br/>" +
+        "<b>Keywords: </b>" + response.FetchMeta.keywords + "<br/>" +
+        "<b>ViewPort: </b>" + response.FetchMeta.viewport + "<br/>" +
+        "<b>Robots: </b>" + response.FetchMeta.robots
+
+       
         
         //document.querySelector("#validator_out").querySelector("span").innerText = response.Validator
         //renderValidatorToHtml("#validator_out")
@@ -77,15 +83,15 @@ function stats(){
             
         //}
 
-document.querySelector("#current_og_meta_out").querySelector("span").innerText = OGMetaTags[1] + ": " + response.FetchMetaOG.description + "\n" + OGMetaTags[0] + ": " + response.FetchMetaOG.keywords + "\n" + OGMetaTags[2] + ": " + response.FetchMetaOG.title + "\n" + `<img src=\"` + response.FetchMetaOG.image + `\"` + `/>`;
+document.querySelector("#current_og_meta_out").querySelector(".output").innerHTML = OGMetaTags[1] + ": " + response.FetchMetaOG.description + "<br/>" + OGMetaTags[0] + ": " + response.FetchMetaOG.keywords + "<br/>" + OGMetaTags[2] + ": " + response.FetchMetaOG.title + "<br/>" + `<img src=\"` + response.FetchMetaOG.image + `\"` + `/>`;
 
         
         /*document.querySelector("#import_sizes_out").querySelector("span").innerText = response.FetchImportSizes.CSSSize
         document.querySelector("#import_sizes_out").querySelector("span").innerText = response.FetchImportSizes.IFRAMESize*/
-        document.querySelector("#import_sizes_out").querySelector("span").innerText = response.FetchImportSizes.IMAGESize + " KB"
+        document.querySelector("#import_sizes_out").querySelector(".output").querySelector("span").innerHTML = "<b>Image Size: </b>" + response.FetchImportSizes.IMAGESize + " KB <br/>" + "<b>CSS Size: </b>" + response.FetchImportSizes.CSSSize + " KB <br/>" + "<b>JavaScript Size </b>" + response.FetchImportSizes.JSSize + " KB <br/>" + "<b>Iframe Size </b>" + response.FetchImportSizes.IFRAMESize + "KB"
         /*document.querySelector("#import_sizes_out").querySelector("span").innerText = response.FetchImportSizes.JSSize*/
 
-        document.querySelector("#request_speed_out").querySelector("span").innerText = response.RequestSpeed
+        document.querySelector("#request_speed_out").querySelector(".output").querySelector("span").innerText = response.RequestSpeed + " Nanoseconds?"
     
         document.querySelector("#domain_out").querySelector("span").innerText = response.Whois.domain
  

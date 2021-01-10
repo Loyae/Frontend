@@ -167,6 +167,8 @@
 					<i class="fab fa-angellist">
 					</i>
 				</a>
+				<br/>
+				<br/>
 				<a href="https://www.linkedin.com/company/loyae" target="_blank" class="link color-white f-18 mr-20">
 					<i class="fab fa-linkedin">
 					</i>
@@ -249,9 +251,21 @@
 						<br/><br/>
 					</div>
 					<div>
-						<a id="launch" onclick="landingRequest()" class="btn lg action-1 shadow-hover" style="background-color: lightcoral">
+					<script>
+	
+				function landingRequest() {
+				var landingURLInput = document.getElementById("landing-url-input").value;
+				sessionStorage.setItem("landingURLInput", landingURLInput);
+				//window.alert(landingURLInput)
+
+				window.location.href = "pages/dashboard.html";
+				
+			}
+
+					</script>
+						<button id="launch" onclick="landingRequest()" class="btn lg action-1 shadow-hover" style="background-color: lightcoral">
 							Launch
-						</a>
+						</button>
 						
 					</div>
 				</div>
