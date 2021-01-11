@@ -1,5 +1,5 @@
 var URL = "";
-var APIURL = "https://ancient-thicket-11529.herokuapp.com"//"http://localhost:8080";
+var APIURL = "http://localhost:8080"//"http://localhost:8080";
 //https://ancient-thicket-11529.herokuapp.com
 
 
@@ -8,6 +8,9 @@ if(sessionStorage.getItem("landingURLInput") != ""){
     stats();
     meta();
     validator();
+    //delete storage
+    sessionStorage.removeItem("landingURLInput")
+
     //window.alert(sessionStorage.getItem("landingURLInput"))
 }
 
@@ -51,7 +54,7 @@ function stats(){
 		                "url",
 		                "site_name",
                         "image"];
-    var currentMeta = ":";
+    //var currentMeta = ":";
     
 
     var requestStats = APIURL +`/stats?url=${encodeURIComponent(URL)}`
@@ -60,7 +63,7 @@ function stats(){
     request.open("GET", requestStats)
     request.onload = () => {
         var response = JSON.parse(request.responseText) 
-        document.querySelector("#size_out").querySelector(".output").querySelector("span").innerText = response.InternalSiteSize + " KB"
+        document.querySelector("#size_out").querySelector(".output").querySelector("span").innerText = response.InternalSiteSize + " MB"
         //gauge("size_out", 40)
 
         document.querySelector("#current_meta_out").querySelector(".output").querySelector("span").innerHTML = 
@@ -83,7 +86,7 @@ function stats(){
             
         //}
 
-document.querySelector("#current_og_meta_out").querySelector(".output").innerHTML = OGMetaTags[1] + ": " + response.FetchMetaOG.description + "<br/>" + OGMetaTags[0] + ": " + response.FetchMetaOG.keywords + "<br/>" + OGMetaTags[2] + ": " + response.FetchMetaOG.title + "<br/>" + `<img src=\"` + response.FetchMetaOG.image + `\"` + `/>`;
+document.querySelector("#current_og_meta_out").querySelector(".output").innerHTML = "<b>Description: </b>" + response.FetchMetaOG.description + "<br/><b>Keywords: </b>" + response.FetchMetaOG.keywords + "<br/><b>Title: </b>" + response.FetchMetaOG.title + `<br/><b>OG Meta Image: </b> <img src=\"` + response.FetchMetaOG.image + `\"` + `/>`;
 
         
         /*document.querySelector("#import_sizes_out").querySelector("span").innerText = response.FetchImportSizes.CSSSize
@@ -97,9 +100,9 @@ document.querySelector("#current_og_meta_out").querySelector(".output").innerHTM
  
         //document.querySelector("#favicon_out").querySelector("span").innerText = response.Whois.favicon
         document.getElementById("favicon_out").src=response.Whois.favicon
-        document.querySelector("#current_title_out").querySelector("span").innerText = response.Whois.title
+        document.querySelector("#current_title_out").querySelector("span").innerHTML = response.Whois.title + "<span style=\"color: green\">, 202</span>"
 
-        document.querySelector("#current_title_out").querySelector("span").querySelector("span").innerText = ", 202"
+        //document.querySelector("#current_title_out").querySelector("span").querySelector("span").innerText = 
 
 
   
