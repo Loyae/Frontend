@@ -78,11 +78,6 @@
     </div>
      
 
-<script>
-function gauge(id, num){
-    document.getElementById(id).querySelector(".cover-degree").style= "transform: rotate(" + num.toString() + "deg) translate3d(0, 0, 0)"
-}</script>
-<button onclick="gauge(`current_meta_out`, 160)">GAUGE</button>
 
 <!--
 
@@ -196,7 +191,7 @@ background: radial-gradient(circle, rgba(63,94,251,1) 0%, rgba(252,70,107,1) 100
        <div class="output">
        <p><span style="color: #B0626B">&#x3C;meta</span> <span style="color: #4FA665">name=&#x22;<span style="color:#C76D43">description</span>&#x22; content=&#x22;</span></p>
        <textarea class="overflow-box" style="height:100px;"></textarea>
-       <p style="color: #4FA665">&#x22;</p>
+       <p style="color: #4FA665">&#x22;&gt;</p>
        </div>
 
       </div>
@@ -207,9 +202,9 @@ background: radial-gradient(circle, rgba(63,94,251,1) 0%, rgba(252,70,107,1) 100
         <button class="search-buttons detail-button">New</button>
       </div>
       <div class="job-card-buttons">
-       <button class="shadow-hover search-buttons card-buttons">Copy</button>
+       <button class="shadow-hover search-buttons card-buttons" onclick="copyToClipboard(`generated_meta_description`)">Copy</button>
        
-       <button class="shadow-hover search-buttons card-buttons-msg">New</button>
+       <button class="shadow-hover search-buttons card-buttons-msg" onclick="meta()">New</button>
       </div>
      </div>
       
@@ -239,7 +234,7 @@ background: radial-gradient(circle, rgba(63,94,251,1) 0%, rgba(252,70,107,1) 100
        <div class="output">
        <p><span style="color: #B0626B">&#x3C;meta</span> <span style="color: #4FA665">name=&#x22;<span style="color:#C76D43">keywords</span>&#x22; content=&#x22;</span></p>
         <textarea class="overflow-box" style="height:100px;"></textarea>
-        <p style="color: #4FA665">&#x22;</p>
+        <p style="color: #4FA665">&#x22;&gt;</p>
        </div>
 
       </div>
@@ -250,8 +245,8 @@ background: radial-gradient(circle, rgba(63,94,251,1) 0%, rgba(252,70,107,1) 100
         <button class="search-buttons detail-button">New</button>
       </div>
       <div class="job-card-buttons">
-       <button class="shadow-hover search-buttons card-buttons">Copy</button>
-       <button class="shadow-hover search-buttons card-buttons-msg">New</button>
+       <button class="shadow-hover search-buttons card-buttons" onclick="copyToClipboard(`generated_meta_keywords`)">Copy</button>
+       <button class="shadow-hover search-buttons card-buttons-msg" onclick="meta()">New</button>
       </div>
      </div>
       
@@ -296,15 +291,14 @@ background: radial-gradient(circle, rgba(63,94,251,1) 0%, rgba(252,70,107,1) 100
 
 
 
-      <!--Current mata-->
+      <!--Current meta-->
      <div class="job-card" id="current_meta_out">
       <div class="job-card-header">
        
 
-      <section class="gauge">
-      <div class="mask">
-    	<div class="semi-circle"></div>
-    	<div class="cover-degree" style="transform: rotate(80deg) translate3d(0, 0, 0);"></div>
+      <section class="gauge" style="opacity: 0.5;">
+      <div class="background-bar">
+        <div class="fill" style="width: 90%;"></div>
       </div>
       </section>
 
@@ -342,10 +336,9 @@ background: radial-gradient(circle, rgba(63,94,251,1) 0%, rgba(252,70,107,1) 100
       <div class="job-card-header">
        
 
-      <section class="gauge">
-      <div class="mask">
-    	<div class="semi-circle"></div>
-    	<div class="semi-circle--mask" style="transform: rotate(80deg) translate3d(0, 0, 0);"></div>
+      <section class="gauge" style="opacity: 0.5;">
+      <div class="background-bar">
+        <div class="fill" style="width: 90%;"></div>
       </div>
       </section>
 
@@ -491,10 +484,9 @@ background: radial-gradient(circle, rgba(63,94,251,1) 0%, rgba(252,70,107,1) 100
       <div class="job-card-header">
         
 
-      <section class="gauge">
-      <div class="mask">
-    	<div class="semi-circle"></div>
-    	<div class="semi-circle--mask" style="transform: rotate(80deg) translate3d(0, 0, 0);"></div>
+      <section class="gauge" style="opacity: 0.5;">
+      <div class="background-bar">
+        <div class="fill" style="width: 90%;"></div>
       </div>
       </section>
 
@@ -530,10 +522,9 @@ background: radial-gradient(circle, rgba(63,94,251,1) 0%, rgba(252,70,107,1) 100
       <div class="job-card-header">
         
 
-      <section class="gauge">
-      <div class="mask">
-    	<div class="semi-circle"></div>
-    	<div class="semi-circle--mask" style="transform: rotate(80deg) translate3d(0, 0, 0);"></div>
+      <section class="gauge" style="opacity: 0.5;">
+      <div class="background-bar">
+        <div class="fill" style="width: 90%;"></div>
       </div>
       </section>
 
@@ -569,10 +560,9 @@ background: radial-gradient(circle, rgba(63,94,251,1) 0%, rgba(252,70,107,1) 100
       <div class="job-card-header">
         
 
-      <section class="gauge">
-      <div class="mask">
-    	<div class="semi-circle"></div>
-    	<div class="semi-circle--mask" style="transform: rotate(80deg) translate3d(0, 0, 0);"></div>
+      <section class="gauge" style="opacity: 0.5;">
+      <div class="background-bar">
+        <div class="fill" style="width: 90%;"></div>
       </div>
       </section>
 
@@ -606,21 +596,14 @@ background: radial-gradient(circle, rgba(63,94,251,1) 0%, rgba(252,70,107,1) 100
       <div class="job-card-header">
         
 
-      <section class="gauge">
-      <div class="mask">
-    	<div class="semi-circle"></div>
-    	<div class="semi-circle--mask" style="transform: rotate(80deg) translate3d(0, 0, 0);"></div>
+      <section class="gauge" style="opacity: 0.5;">
+      <div class="background-bar">
+        <div class="fill" style="width: 90%;"></div>
       </div>
       </section>
 
        
 
-      <section class="gauge">
-      <div class="mask">
-    	<div class="semi-circle"></div>
-    	<div class="semi-circle--mask" style="transform: rotate(80deg) translate3d(0, 0, 0);"></div>
-      </div>
-      </section>
 
 
       

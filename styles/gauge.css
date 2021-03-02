@@ -1,9 +1,23 @@
 .gauge {
     display: flex; 
-    transform: scale(0.5); 
-    margin: -40px -40px -40px -70px;
+    margin: 0px 0px 0px 0px;
+    position: relative;
+    height: 100%;
+    width: 100%;
 }
-
+.gauge .background-bar {
+    display: block;
+    background-color: lightgray;
+    height: 20px;
+    width: 70%;
+    border-radius: 6px;
+  }
+  .gauge .fill {
+    background-color: lightcoral;
+    border-radius: 6px;
+    height: 20px;
+  }
+/*
 .mask {
     position: relative;
     overflow: hidden;
@@ -20,13 +34,12 @@
     width: 12.5rem;
     height: 6.25rem;
     
-    
-    /*background: linear-gradient(to right, #c0392b 0%, #f1c40f 50%, #1abc9c 100%);*/
     background: lightcoral; 
     border-radius: 50% 50% 50% 50% / 100% 100% 0% 0%;
 }
 
 .semi-circle::before {
+
     content: "";
     position: absolute;
     bottom: 0;
@@ -65,3 +78,4 @@
     border-radius: 50% 50% 50% 50% / 100% 100% 0% 0%;
 }
 
+*/
