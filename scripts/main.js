@@ -193,20 +193,42 @@ if(response.FetchMetaOG.description != null){
 
 }
 
+function download(url, filename) {
+    fetch(url).then(function(t) {
+        return t.blob().then((b)=>{
+            var a = document.createElement("a");
+            a.href = URL.createObjectURL(b);
+            a.setAttribute("download", filename);
+            a.click();
+        }
+        );
+    });
+    }
 
 function compress(){
+
+    download( `/compress?url=${encodeURIComponent(URL)}`,"cc.html")
+
+
+
+
     var requestCompress = APIURL + `/compress?url=${encodeURIComponent(URL)}`
+    reduction = 5
 
     var request = new XMLHttpRequest()
     request.open("GET", requestCompress)
     request.onload = () => {
         var response = JSON.parse(request.responseText) 
-
-        document.querySelector("#compressed_html_out").querySelector("textarea").innerText = response.CompressedHTML
-        document.querySelector("#compressed_reduction").innerText = response.Reduction
+        reduction = response.Reduction
+        //document.querySelector("#compressed_html_out").querySelector("textarea").innerText = response.CompressedHTML
+        document.querySelector("#compressed_reduction").innerText = reduction
 
 }
 request.send();
+
+if(reduction > 100){ reduction = 100}
+
+gauge(`compression`, Number(reduction))
 }
 
 

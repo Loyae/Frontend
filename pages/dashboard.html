@@ -13,20 +13,14 @@
   <body>
 <div class="job">
  <div class="header">
-  <div class="logo">
-   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
-     
-    <!--<path xmlns="http://www.w3.org/2000/svg" d="M512 503.5H381.7a48 48 0 01-45.3-32.1L265 268.1l-9-25.5 2.7-124.6L338.2 8.5l23.5 67.1L512 503.5z" fill="#0473ff" data-original="#28b446" />
-    <path xmlns="http://www.w3.org/2000/svg" fill="#0473ff" data-original="#219b38" d="M361.7 75.6L265 268.1l-9-25.5 2.7-124.6L338.2 8.5z" />
-    <path xmlns="http://www.w3.org/2000/svg" d="M338.2 8.5l-82.2 234-80.4 228.9a48 48 0 01-45.3 32.1H0l173.8-495h164.4z" fill="#0473ff" data-original="#518ef8" />-->
-    
-     <img src="../assets/logos/logo.png" height="30px" width="30px" style="margin: 3px;"/>
-     
 
-   </svg>
-    
+<a href="../index.html" style="text-decoration: none">
+  <div class="logo">
+     <img src="../assets/logos/logo.png" height="30px" width="30px" style="margin: 3px;"/>
    Loyae
   </div>
+</a>
+
   <div class="header-menu">
    <a href="#" class="active">Dashboard</a>
    <a href="../index.html">Home</a>
@@ -592,7 +586,7 @@ background: radial-gradient(circle, rgba(63,94,251,1) 0%, rgba(252,70,107,1) 100
       
 
     <!--Compress-->
-     <div class="job-card">
+     <div class="job-card" id="compression">
       <div class="job-card-header">
         
 
@@ -614,10 +608,10 @@ background: radial-gradient(circle, rgba(63,94,251,1) 0%, rgba(252,70,107,1) 100
       <div class="job-card-title">Web Compression</div>
       <div class="job-card-subtitle">
 
-        <p id="compressed_reduction"> Bytes Reduced
-       <div id="compressed_html_out">
+        <p id="compressed_reduction"> Bytes Reduced </p>
+       <!--<div id="compressed_html_out">
       <textarea class="overflow-box"></textarea>
-       </div>
+       </div>-->
 
       </div>
       <div class="job-detail-buttons">
@@ -649,7 +643,7 @@ background: radial-gradient(circle, rgba(63,94,251,1) 0%, rgba(252,70,107,1) 100
 
 
 
-
+<!--
 
 
 
@@ -955,6 +949,15 @@ background: radial-gradient(circle, rgba(63,94,251,1) 0%, rgba(252,70,107,1) 100
 
 
 -->
+
+<br/>
+
+<p style="text-align: center;">© <span id="year"></span> Loyae. All rights reserved.</p>
+
+<script>
+document.getElementById("year").innerHTML = new Date().getFullYear();
+</script>
+
 
 </body>
 </html>
