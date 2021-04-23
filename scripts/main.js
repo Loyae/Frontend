@@ -1,6 +1,8 @@
 var URL = "";
-var APIURL = "http://localhost:8080"//"http://localhost:8080";
+var APIURL = "http://localhost:8080";//"http://localhost:8080";
 //https://ancient-thicket-11529.herokuapp.com
+
+var invalidURL = false;
 
 function gauge(id, num){
     document.getElementById(id).querySelector(".gauge").style= "opacity: 0." + (num.toString() + 10) + ";"
@@ -68,6 +70,13 @@ function stats(){
     request.open("GET", requestStats)
     request.onload = () => {
         var response = JSON.parse(request.responseText) 
+
+        if(response.Err == true && invalidURL == false){
+            window.alert("Invalid URL")
+            invalidURL = true
+            return
+        }
+
         document.querySelector("#size_out").querySelector(".output").querySelector("span").innerText = response.InternalSiteSize + " MB"
         //gauge("size_out", 40)
 
@@ -205,22 +214,52 @@ function download(url, filename) {
     });
     }
 
+
+    // function download(url, filename) {
+    //     fetch(url).then(function(t) {
+    //         return t.blob().then((b)=>{
+    //             var a = document.createElement("a");
+    //             a.href = URL.createObjectURL(b);
+    //             a.setAttribute("download", filename);
+    //             a.click();
+    //         }
+    //         );
+    //     });
+    //     }
+
 function compress(){
 
-    download( `/compress?url=${encodeURIComponent(URL)}`,"cc.html")
 
 
 
 
     var requestCompress = APIURL + `/compress?url=${encodeURIComponent(URL)}`
+
+   // download(requestCompress,"cc.html")
+
+   
+
+
     reduction = 5
 
     var request = new XMLHttpRequest()
     request.open("GET", requestCompress)
     request.onload = () => {
         var response = JSON.parse(request.responseText) 
+
+        if(response.Err == true && invalidURL == false){
+            window.alert("Invalid URL")
+            invalidURL = true
+            return
+        }
+
         reduction = response.Reduction
-        //document.querySelector("#compressed_html_out").querySelector("textarea").innerText = response.CompressedHTML
+        
+        var tab = window.open('about:blank', '_blank');
+        tab.document.write(response.CompressedHTML); // where 'html' is a variable containing your HTML
+        tab.document.close(); // to finish loading the page
+
+
         document.querySelector("#compressed_reduction").innerText = reduction
 
 }
@@ -239,6 +278,12 @@ function meta(){
     request.open("GET", requestGeneratedMeta)
     request.onload = () => {
         var response = JSON.parse(request.responseText) 
+
+        if(response.Err == true && invalidURL == false){
+            window.alert("Invalid URL")
+            invalidURL = true
+            return
+        }
 
         document.querySelector("#generated_meta_description").querySelector(".output").querySelector("textarea").innerText = response.GeneratedMetaDescription;
 
@@ -266,6 +311,12 @@ function validator(){
     request.open("GET", requestValidator)
     request.onload = () => {
         var response = JSON.parse(request.responseText) 
+
+        if(response.Err == true && invalidURL == false){
+            window.alert("Invalid URL")
+            invalidURL = true
+            return
+        }
 
         document.getElementById('validator_out').innerHTML = response.validatorHTML;
         
