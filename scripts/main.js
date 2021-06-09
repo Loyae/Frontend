@@ -1,5 +1,5 @@
 var URL = "";
-var APIURL = "http://localhost:8080";//"http://localhost:8080";
+var APIURL = "https://bouncy-party-production.up.railway.app";//"http://localhost:8080";
 //https://ancient-thicket-11529.herokuapp.com
 
 var invalidURL = false;
@@ -88,7 +88,7 @@ function stats(){
 
         
         if(response.FetchMeta.description != null){
-            window.alert("test")
+            //window.alert("test")
             gauge(`current_meta_out`, 50)
             if(response.FetchMeta.keywords != null){
                 gauge(`current_meta_out`, 98)
@@ -113,7 +113,7 @@ function stats(){
 document.querySelector("#current_og_meta_out").querySelector(".output").innerHTML = "<b>Description: </b>" + response.FetchMetaOG.description + "<br/><b>Keywords: </b>" + response.FetchMetaOG.keywords + "<br/><b>Title: </b>" + response.FetchMetaOG.title + `<br/><b>OG Meta Image: </b> <img src=\"` + response.FetchMetaOG.image + `\"` + `/>`;
 
 if(response.FetchMetaOG.description != null){
-    window.alert("test")
+    //window.alert("test")
     gauge(`current_og_meta_out`, 10)
     if(response.FetchMetaOG.keywords != null){
         gauge(`current_og_meta_out`, 20)
@@ -132,7 +132,7 @@ if(response.FetchMetaOG.description != null){
         document.querySelector("#import_sizes_out").querySelector(".output").querySelector("span").innerHTML = "<b>Image Size: </b>" + response.FetchImportSizes.IMAGESize + " KB <br/>" + "<b>CSS Size: </b>" + response.FetchImportSizes.CSSSize + " KB <br/>" + "<b>JavaScript Size </b>" + response.FetchImportSizes.JSSize + " KB <br/>" + "<b>Iframe Size </b>" + response.FetchImportSizes.IFRAMESize + "KB"
 
         totalImportSize = Number(response.FetchImportSizes.IMAGESize) + Number(response.FetchImportSizes.CSSSize) + Number(response.FetchImportSizes.JSSize) + Number(response.FetchImportSizes.IFRAMESize)
-        window.alert(totalImportSize)
+        //window.alert(totalImportSize)
         gauge(`import_sizes_out`, ceil(totalImportSize / 4))
         /*document.querySelector("#import_sizes_out").querySelector("span").innerText = response.FetchImportSizes.JSSize*/
 
@@ -147,8 +147,43 @@ if(response.FetchMetaOG.description != null){
         //document.querySelector("#current_title_out").querySelector("span").querySelector("span").innerText = 
 
 
+
+        document.querySelector("#current_alt_out").querySelector(".output").innerHTML = `
+        <table style="width:80%; font-size: 10px">
+        <tr>
+          <th>Image</th>
+          <th>Alt Data</th>
+        </tr>
+
+        <tr>
+          <td><img src="` + response.FetchAlt[0][0] + `" height="40"/></td>
+          <td>` + response.FetchAlt[0][2] + `</td>
+        </tr>
+
+        <tr>
+        <td><img src="` + response.FetchAlt[1][0] + `" height="40"/></td>
+        <td>` + response.FetchAlt[1][2] + `</td>
+        </tr>
+
+        <tr>
+        <td><img src="` + response.FetchAlt[2][0] + `" height="40"/></td>
+        <td>` + response.FetchAlt[2][2] + `</td>
+        </tr>
+
+        <tr>
+        <td><img src="` + response.FetchAlt[3][0] + `" height="40"/></td>
+        <td>` + response.FetchAlt[3][2] + `</td>
+        </tr>
+
+        <tr>
+        <td><img src="` + response.FetchAlt[4][0] + `" height="40"/></td>
+        <td>` + response.FetchAlt[4][2] + `</td>
+        </tr>
+      </table>`
   
-        
+        //src
+        //response.FetchAlt[i][1] //href
+        //alt
 
         
         
