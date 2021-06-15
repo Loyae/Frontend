@@ -5,7 +5,12 @@ var APIURL = "https://bouncy-party-production.up.railway.app";//"http://localhos
 var invalidURL = false;
 
 function gauge(id, num){
-    document.getElementById(id).querySelector(".gauge").style= "opacity: 0." + (num.toString() + 10) + ";"
+
+    if(num > 100){
+        num = 100;
+    }
+
+    document.getElementById(id).querySelector(".gauge").style= "opacity:" + (num.toString() + 10)/100 + ";"
     document.getElementById(id).querySelector(".gauge .fill").style= "width: " + num.toString() + "%;"
 }
 
@@ -78,7 +83,7 @@ function stats(){
         }
 
         document.querySelector("#size_out").querySelector(".output").querySelector("span").innerText = response.InternalSiteSize + " MB"
-        //gauge("size_out", 40)
+        gauge("size_out", response.InternalSiteSize);
 
         document.querySelector("#current_meta_out").querySelector(".output").querySelector("span").innerHTML = 
         "<b>Description: </b> " + response.FetchMeta.description + "<br/>" +
@@ -110,15 +115,15 @@ function stats(){
             
         //}
 
-document.querySelector("#current_og_meta_out").querySelector(".output").innerHTML = "<b>Description: </b>" + response.FetchMetaOG.description + "<br/><b>Keywords: </b>" + response.FetchMetaOG.keywords + "<br/><b>Title: </b>" + response.FetchMetaOG.title + `<br/><b>OG Meta Image: </b> <img src=\"` + response.FetchMetaOG.image + `\"` + `/>`;
+document.querySelector("#current_og_meta_out").querySelector(".output").innerHTML = "<b>Description: </b>" + response.FetchMetaOG.description + "<br/><b>Keywords: </b>" + response.FetchMetaOG.keywords + "<br/><b>Title: </b>" + response.FetchMetaOG.title + `<br/><b>OG Meta Image: </b> <br/><img src=\"` + response.FetchMetaOG.image + `\"` + ` style="height:150;"/>`;
 
 if(response.FetchMetaOG.description != null){
     //window.alert("test")
-    gauge(`current_og_meta_out`, 10)
+    gauge(`current_og_meta_out`, 20)
     if(response.FetchMetaOG.keywords != null){
-        gauge(`current_og_meta_out`, 20)
+        gauge(`current_og_meta_out`, 50)
         if(response.FetchMetaOG.title != null){
-            gauge(`current_og_meta_out`, 50)
+            gauge(`current_og_meta_out`, 70)
             if(response.FetchMetaOG.image != null){
                 gauge(`current_og_meta_out`, 98)
             }
@@ -126,23 +131,24 @@ if(response.FetchMetaOG.description != null){
     }
 }
 
-        
+        var requestSpeedOut = 
+        document.querySelector("#request_speed_out").querySelector(".output").querySelector("span").innerText = (response.RequestSpeed/100000000) + " Seconds";
+        gauge(`request_speed_out`, response.RequestSpeed/1000000)
+
         /*document.querySelector("#import_sizes_out").querySelector("span").innerText = response.FetchImportSizes.CSSSize
         document.querySelector("#import_sizes_out").querySelector("span").innerText = response.FetchImportSizes.IFRAMESize*/
         document.querySelector("#import_sizes_out").querySelector(".output").querySelector("span").innerHTML = "<b>Image Size: </b>" + response.FetchImportSizes.IMAGESize + " KB <br/>" + "<b>CSS Size: </b>" + response.FetchImportSizes.CSSSize + " KB <br/>" + "<b>JavaScript Size </b>" + response.FetchImportSizes.JSSize + " KB <br/>" + "<b>Iframe Size </b>" + response.FetchImportSizes.IFRAMESize + "KB"
 
-        totalImportSize = Number(response.FetchImportSizes.IMAGESize) + Number(response.FetchImportSizes.CSSSize) + Number(response.FetchImportSizes.JSSize) + Number(response.FetchImportSizes.IFRAMESize)
-        //window.alert(totalImportSize)
-        gauge(`import_sizes_out`, ceil(totalImportSize / 4))
+
         /*document.querySelector("#import_sizes_out").querySelector("span").innerText = response.FetchImportSizes.JSSize*/
 
-        document.querySelector("#request_speed_out").querySelector(".output").querySelector("span").innerText = response.RequestSpeed + " Nanoseconds?"
+        
     
-        document.querySelector("#domain_out").querySelector("span").innerText = response.Whois.domain
+        document.querySelector("#domain_out").querySelector("span").innerText = response.Whois.domain;
  
         //document.querySelector("#favicon_out").querySelector("span").innerText = response.Whois.favicon
-        document.getElementById("favicon_out").src=response.Whois.favicon
-        document.querySelector("#current_title_out").querySelector("span").innerHTML = response.Whois.title + "<span style=\"color: green\">, 202</span>"
+        document.getElementById("favicon_out").src=response.Whois.favicon;
+        document.querySelector("#current_title_out").querySelector("span").innerHTML = response.Whois.title + "<span style=\"color: green\">, 202</span>";
 
         //document.querySelector("#current_title_out").querySelector("span").querySelector("span").innerText = 
 
@@ -181,12 +187,27 @@ if(response.FetchMetaOG.description != null){
         </tr>
       </table>`
   
+
+      if(response.FetchAlt[0][2] == "" && response.FetchAlt[1][2] == ""){
+        gauge(`current_alt_out`, 10);
+      } else if (response.FetchAlt[2][2] != "") {
+        gauge(`current_alt_out`, 55);
+      } else {
+        gauge(`current_alt_out`, 90);
+      }
+
         //src
         //response.FetchAlt[i][1] //href
         //alt
 
         
-        
+        totalImportSize = Number(response.FetchImportSizes.IMAGESize) + Number(response.FetchImportSizes.CSSSize) + Number(response.FetchImportSizes.JSSize) + Number(response.FetchImportSizes.IFRAMESize)
+        //window.alert(totalImportSize)
+       
+       
+       
+       
+        gauge(`import_sizes_out`, ceil(totalImportSize / 4))
         
 
 
@@ -302,7 +323,7 @@ request.send();
 
 if(reduction > 100){ reduction = 100}
 
-gauge(`compression`, Number(reduction))
+gauge(`compression`, Number(reduction) )
 }
 
 
