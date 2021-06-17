@@ -115,7 +115,8 @@ function stats(){
             
         //}
 
-document.querySelector("#current_og_meta_out").querySelector(".output").innerHTML = "<b>Description: </b>" + response.FetchMetaOG.description + "<br/><b>Keywords: </b>" + response.FetchMetaOG.keywords + "<br/><b>Title: </b>" + response.FetchMetaOG.title + `<br/><b>OG Meta Image: </b> <br/><img src=\"` + response.FetchMetaOG.image + `\"` + ` style="height:150;"/>`;
+        var OGimage = (response.FetchMetaOG.image != "") ?  `<br/><b>OG Meta Image: </b> <br/><img src=\"` + response.FetchMetaOG.image + `\"` + ` style="height:150;"/>` : "";
+document.querySelector("#current_og_meta_out").querySelector(".output").innerHTML = "<b>Description: </b>" + response.FetchMetaOG.description + "<br/><b>Keywords: </b>" + response.FetchMetaOG.keywords + "<br/><b>Title: </b>" + response.FetchMetaOG.title + OGimage;
 
 if(response.FetchMetaOG.description != null){
     //window.alert("test")
