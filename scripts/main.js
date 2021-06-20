@@ -345,11 +345,12 @@ function meta(){
         document.querySelector("#generated_meta_description").querySelector(".output").querySelector("textarea").innerText = response.GeneratedMetaDescription;
         
             document.querySelector("#generated_meta_description").querySelector(".loader").style.display = "none";
-        /*var GeneratedMetaKeywordsResponse
-        for(i = 0; i < 10; i++ ){
-            GeneratedMetaKeywordsResponse += response.GeneratedMetaKeywords[i][0];
-        }*/
-        document.querySelector("#generated_meta_keywords").querySelector(".output").querySelector("textarea").innerText = response.GeneratedMetaKeywords;
+        var GeneratedMetaKeywordsResponse = "";
+        for(i = 0; i < response.GeneratedMetaKeywords.length; i++ ){
+            
+            GeneratedMetaKeywordsResponse += response.GeneratedMetaKeywords[i][0] + ((i != response.GeneratedMetaKeywords.length - 1) ? ", " : "");
+        }
+        document.querySelector("#generated_meta_keywords").querySelector(".output").querySelector("textarea").innerText = GeneratedMetaKeywordsResponse;
         document.querySelector("#generated_meta_keywords").querySelector(".loader").style.display = "none";
 
    
