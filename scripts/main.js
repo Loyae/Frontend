@@ -34,6 +34,7 @@ function request() {
 
     document.querySelector("#generated_meta_description").querySelector(".loader").style.display = "block";
     document.querySelector("#current_title_out").querySelector(".loader").style.display = "block";
+    document.querySelector("#generated_meta_keywords").querySelector(".loader").style.display = "block";
     stats();
     //compress(URL);
     meta();
@@ -118,7 +119,7 @@ function stats(){
             
         //}
 
-        var OGimage = (response.FetchMetaOG.image != "" || response.FetchMetaOG.image.includes(".ico") == false) ?  `<br/><b>OG Meta Image: </b> <br/><img src=\"` + response.FetchMetaOG.image + `\"` + ` style="height:150;"/>` : "";
+        var OGimage = (response.FetchMetaOG.image != "" && typeof response.FetchMetaOG.image !== 'undefined') ?  `<br/><b>OG Meta Image: </b> <br/><img src=\"` + response.FetchMetaOG.image + `\"` + ` style="height:150;"/>` : "";
 document.querySelector("#current_og_meta_out").querySelector(".output").innerHTML = "<b>Description: </b>" + response.FetchMetaOG.description + "<br/><b>Keywords: </b>" + response.FetchMetaOG.keywords + "<br/><b>Title: </b>" + response.FetchMetaOG.title + OGimage;
 
 if(response.FetchMetaOG.description != null){
