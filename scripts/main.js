@@ -31,10 +31,11 @@ function request() {
     
     URL = document.getElementById("url-input").value
 
-
+ 
     document.querySelector("#generated_meta_description").querySelector(".loader").style.display = "block";
-    document.querySelector("#current_title_out").querySelector(".loader").style.display = "block";
     document.querySelector("#generated_meta_keywords").querySelector(".loader").style.display = "block";
+    
+
     stats();
     //compress(URL);
     meta();
