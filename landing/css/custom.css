@@ -13,3 +13,26 @@
     -webkit-filter: brightness(1.1);
     filter: brightness(1.1);
 }
+
+#launch {
+    background-color: lightcoral;
+}
+
+/*#arrow {
+    visibility: hidden;
+    display: none;
+}
+
+@media screen and (min-width: 1024px) {*/
+    #arrow {
+    display: inline;
+    visibility: visible;
+    font-size: 30px;
+    }
+/*}*/
+
+#display-dashboard {
+    border-radius: 2vw;
+    box-shadow: 0px 0px 25px lightgray;
+}    
+
