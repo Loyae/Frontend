@@ -1,0 +1,29 @@
+<html>
+  <head>
+    <title>What Loyae Can Do For You</title>
+    <meta name="description" content="Loyae scrapes your site to generate 
+                           			  meta descriptions/keywords and alt 
+                           			  data using machine learning."/>
+    <meta name="keywords" content="Loyae, metadata, machine learning, improve SEO"/>
+  </head>
+  <body>
+    <img src="icon.png" alt="Loyae logo"/>
+    <p>
+      Loyae uses machine learning to abstractivaly generate:
+    </p>
+    <ul>
+      <li>Meta Descriptions</li>
+      <li>Meta Keywords</li>
+      <li>Image Alt Data</li>
+    </ul>
+    
+    <p>
+      Loyae scrapes text-based content from your site.
+      This raw content is scrubbed and fed through a neural network.
+      The model's output is displayed to you! The user!
+      The generated metadata may be used on your site to improve its SEO.
+    </p>
+    
+    <img src="happy.jpeg" alt="Person with a happy expression"/>
+  </body>
+</html>
