@@ -229,13 +229,13 @@
 }
 .btn.action-white {
   background-color: #ffffff;
-  color: #1E0E62;
+  color: black;
 }
 .btn.action-white:hover {
   background-color: #e6e6e6;
 }
 .btn.action-main {
-  background-color: #1E0E62;
+  background-color: black;
   color: #ffffff;
 }
 .btn.action-main:hover {
@@ -250,7 +250,7 @@
 }
 .btn.action-gray {
   background-color: #EBEAED;
-  color: #1E0E62;
+  color: black;
 }
 .btn.action-gray:hover {
   background-color: #d1cfd5;
@@ -298,13 +298,13 @@
   background-color: #d81862;
 }
 .btn.border-main {
-  border: 2px solid #1E0E62;
+  border: 2px solid black;
 }
 .btn.border-main:hover {
   border-color: #391bbb;
 }
 .btn.border-transparent-main {
-  color: #1E0E62;
+  color: black;
   border: 2px solid rgba(30, 14, 98, 0.3);
 }
 .btn.border-transparent-main:hover {
@@ -413,7 +413,7 @@
   font-weight: 600;
 }
 .input.border-main {
-  border: 2px solid #1E0E62;
+  border: 2px solid black;
 }
 .input.border-heading {
   border: 2px solid #4C5A6B;
@@ -443,7 +443,7 @@
   border: 2px solid lightcoral;
 }
 .input.focus-main:focus {
-  border-color: #1E0E62;
+  border-color: black;
 }
 .input.focus-heading:focus {
   border-color: #4C5A6B;
@@ -489,13 +489,13 @@
   color: #e39696;
 }
 .input.placeholder-main::-moz-placeholder {
-  color: #1E0E62;
+  color: black;
 }
 .input.placeholder-main::-webkit-input-placeholder {
-  color: #1E0E62;
+  color: black;
 }
 .input.placeholder-main:-ms-input-placeholder {
-  color: #1E0E62;
+  color: black;
 }
 .input.placeholder-heading::-moz-placeholder {
   color: #4C5A6B;
@@ -556,7 +556,7 @@ select {
   background-size: 11px 6px;
   border: 0;
   outline: none;
-  color: #1E0E62;
+  color: black;
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
@@ -571,7 +571,7 @@ select.color-white {
   background-image: url(../i/fa-angle-down-white.png);
 }
 select.color-white option {
-  color: #1E0E62;
+  color: black;
   background: #fff;
 }
 
@@ -607,7 +607,7 @@ input[type=checkbox] + label:before, input[type=radio] + label:before {
   transition: all 0.2s;
 }
 input[type=checkbox].border-main + label:before, input[type=radio].border-main + label:before {
-  border: 2px solid #1E0E62;
+  border: 2px solid black;
 }
 input[type=checkbox].border-heading + label:before, input[type=radio].border-heading + label:before {
   border: 2px solid #4C5A6B;
@@ -637,7 +637,7 @@ input[type=checkbox].border-action-3 + label:before, input[type=radio].border-ac
   border: 2px solid lightcoral;
 }
 input[type=checkbox].bg-main + label:before, input[type=radio].bg-main + label:before {
-  background-color: #1E0E62;
+  background-color: black;
 }
 input[type=checkbox].bg-heading + label:before, input[type=radio].bg-heading + label:before {
   background-color: #4C5A6B;
@@ -667,8 +667,8 @@ input[type=checkbox].bg-action-3 + label:before, input[type=radio].bg-action-3 +
   background-color: lightcoral;
 }
 input[type=checkbox].focus-main:checked + label:before, input[type=radio].focus-main:checked + label:before {
-  border-color: #1E0E62;
-  background-color: #1E0E62;
+  border-color: black;
+  background-color: black;
   color: #ffffff;
 }
 input[type=checkbox].focus-heading:checked + label:before, input[type=radio].focus-heading:checked + label:before {
@@ -678,7 +678,7 @@ input[type=checkbox].focus-heading:checked + label:before, input[type=radio].foc
 input[type=checkbox].focus-white:checked + label:before, input[type=radio].focus-white:checked + label:before {
   border-color: #ffffff;
   background-color: #ffffff;
-  color: #1E0E62;
+  color: black;
 }
 input[type=checkbox].focus-gray:checked + label:before, input[type=radio].focus-gray:checked + label:before {
   border-color: #EBEAED;
@@ -696,7 +696,7 @@ input[type=checkbox].focus-dark:checked + label:before, input[type=radio].focus-
 input[type=checkbox].focus-action-1:checked + label:before, input[type=radio].focus-action-1:checked + label:before {
   border-color: coral;
   background-color: coral;
-  color: #1E0E62;
+  color: black;
 }
 input[type=checkbox].focus-action-2:checked + label:before, input[type=radio].focus-action-2:checked + label:before {
   border-color: #482BE7;
@@ -728,9 +728,9 @@ input[type=radio] + label:before {
 
 /* Other elements */
 .logo {
-  font-family: DM Sans, Helvetica, Arial, sans-serif;
+  font-family: Poppins, Helvetica, Arial, sans-serif;
   font-size: 24px;
-  color: #1E0E62;
+  color: black;
   font-weight: 700;
 }
 .logo.color-white {
@@ -763,7 +763,7 @@ input[type=radio] + label:before {
   top: 20px;
   width: 40px;
   height: 40px;
-  color: #1E0E62;
+  color: black;
   font-size: 20px;
   line-height: 40px;
   text-align: center;
@@ -850,7 +850,7 @@ input[type=radio] + label:before {
 }
 .play.white {
   background: #ffffff;
-  color: #1E0E62;
+  color: black;
 }
 .play.action-1 {
   background: coral;
@@ -897,8 +897,8 @@ input[type=radio] + label:before {
   margin-top: 1rem;
 }
 .alert-primary {
-  background: #1E0E62;
-  border-color: #1E0E62;
+  background: black;
+  border-color: black;
 }
 .alert-secondary {
   background: #4C5A6B;
@@ -919,10 +919,10 @@ input[type=radio] + label:before {
 .alert-light {
   background: #ffffff;
   border-color: #ffffff;
-  color: #1E0E62;
+  color: black;
 }
 .alert-light.alert .close:hover {
-  color: #1E0E62;
+  color: black;
 }
 .alert-dark {
   background: #2F1893;
@@ -1075,10 +1075,10 @@ input[type=radio] + label:before {
   right: 100px;
 }
 .slider.dots_color_main .slick-dots li button {
-  border-color: #1E0E62;
+  border-color: black;
 }
 .slider.dots_color_main .slick-dots li.slick-active button {
-  background: #1E0E62;
+  background: black;
 }
 .slider.dots-100 .slick-dots {
   bottom: -100px;
@@ -11727,11 +11727,11 @@ input[type=radio] + label:before {
 
 /* Font families */
 .f-heading {
-  font-family: DM Sans, Helvetica, Arial, sans-serif;
+  font-family: Poppins, Helvetica, Arial, sans-serif;
 }
 
 .f-main {
-  font-family: DM Sans, Helvetica, Arial, sans-serif;
+  font-family: Poppins, Helvetica, Arial, sans-serif;
 }
 
 /* Font sizes */
@@ -12372,7 +12372,7 @@ input[type=radio] + label:before {
 }
 
 .color-main {
-  color: #1E0E62;
+  color: black;
 }
 .color-main.link:hover {
   color: #391bbb;
@@ -12456,7 +12456,7 @@ input[type=radio] + label:before {
   background-color: #2F1893 !important;
 }
 .bg-main {
-  background-color: #1E0E62;
+  background-color: black;
 }
 .bg-heading {
   background-color: #4C5A6B;
