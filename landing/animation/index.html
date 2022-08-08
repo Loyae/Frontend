@@ -1,0 +1,157 @@
+<br/>
+
+<div id="animation">
+    <div id="animation-code" class="box">
+    j
+    </div>
+
+    <div id="animation-render" class="box"> 
+    k
+    </div>
+</div>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+#animation {
+margin-left: 10%;
+margin-right: 10%;
+overflow: auto;
+
+justify-content:center;
+
+display:flex;
+ 
+    border-radius: 10px;
+
+    width: auto;
+
+    transform-style: preserve-3d;
+    perspective: 1000px;
+    box-shadow: -40px 40px 60px gray;
+    transform: rotateY(15deg) rotateX(15deg);
+
+}
+
+#animation:hover {
+cursor: pointer;
+}
+
+
+
+#animation-code {
+    
+
+    width: 50%;
+    
+    background-color: #282c34;
+    overflow-wrap: break-word;
+}
+
+#animation-render {
+width: 50%;
+}
+
+.box {
+    /*border: 2px solid lightcoral;*/
+    height: auto;
+    padding: 5px;
+   
+    overflow: auto;
+
+     
+}
+
+.color-syntax {
+    color: green;
+    background-color: red;
+}
+
+.gay {
+background-color: blue;
+}
+
+</style>
+<script src="syntax.js"></script>
+<script>
+
+const animation = document.querySelector('#animation');
+const container = document.querySelector('#animation-container');
+
+
+animation.addEventListener('mousemove', (e) => {
+    let x = ((window.innerWidth / 2 - e.pageX)/100);
+    let y =  ((window.innerHeight / 2 - e.pageY))/100;
+    animation.style.transform = `rotateY(${15+x}deg) rotateX(${15+y}deg)`;
+    animation.style.boxShadow = `${-40 - x/2}px ${40 + y/2}px 60px gray`;
+});
+
+animation.addEventListener('mouseout', (e) => {
+console.log("out")
+})
+
+//when steps in
+animation.addEventListener('mouseenter', (e)=> {
+animation.style.transition = `none`;
+});
+
+
+
+//when steps outside
+animation.addEventListener('mouseleave', (e) => {
+    animation.style.transition = `all 0.5s ease`;
+    animation.style.transform = `rotateY(15deg) rotateX(15deg)`;
+    animation.style.boxShadow = `-40px 40px 60px gray`; 
+});
+
+
+
+
+
+const text = document.querySelector('#animation-render')
+
+
+var code = `        <!DOCTYPE html>
+
+                    <html>
+                    <head>
+                    <title>Title</title>
+                    <meta content="stuff"/>
+                    </head>
+
+                    <body>
+
+                    <div>
+                    <center><h1>Title</h1></center>
+
+                    <p>text text text</p>
+                    <img src="https://images.unsplash.com/photo-1529778873920-4da4926a72c2?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8Y3V0ZSUyMGNhdHxlbnwwfHwwfHw%3D&w=1000&q=80" height="200"/>
+                    <p>text text text</p>
+                    </div>
+
+                    </body>`;
+
+
+text.innerHTML = code;
+
+
+
+
+
+
+var element = document.querySelector('#animation-code')
+element.innerText = code;
+var sanitized = element.innerHTML;
+
+
+
+w3CodeColor(document.getElementById("animation-code"));
+
+
+
+
+</script>
