@@ -1,14 +1,26 @@
-<br/>
-
-<div id="animation">
-    <div id="animation-code" class="box">
-    j
-    </div>
-
+<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+<center>
+<div id="whole-animation">
+<div class="animation" id="animation-render-outer">
     <div id="animation-render" class="box"> 
     k
     </div>
 </div>
+<div class="animation" id="animation-code-outer">
+    <div id="animation-code" class="box">
+    j
+    </div>
+</div>
+</div>
+</center>
+
+
+
+
+    
+
+<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
 
 <style>
 * {
@@ -17,14 +29,12 @@
     box-sizing: border-box;
 }
 
-#animation {
-margin-left: 10%;
-margin-right: 10%;
-overflow: auto;
+.animation {
+    overflow: auto;
 
-justify-content:center;
+    justify-content:center;
 
-display:flex;
+    display:flex;
  
     border-radius: 10px;
 
@@ -32,80 +42,129 @@ display:flex;
 
     transform-style: preserve-3d;
     perspective: 1000px;
-    box-shadow: -40px 40px 60px gray;
-    transform: rotateY(15deg) rotateX(15deg);
+    
 
 }
-
-#animation:hover {
+.animation:hover {
 cursor: pointer;
 }
 
+#whole-animation{
+width: 900px;
+}
 
+#animation-render-outer {
+position: relative;
+z-index: 10;
+margin-left: 100px;
+}
+
+#animation-code-outer {
+position: relative;
+z-index: 5;
+margin-right: 100px;
+
+margin-top: -450px;
+
+    box-shadow: -40px 40px 60px gray;
+}
 
 #animation-code {
-    
-
-    width: 50%;
-    
+    width: 100%;
+    position: relative;
     background-color: #282c34;
     overflow-wrap: break-word;
 }
 
 #animation-render {
-width: 50%;
+    width: 100%;
+    position: relative;
+    background-color: lightcoral;
+    opacity: .9;  
+
 }
+
 
 .box {
     /*border: 2px solid lightcoral;*/
-    height: auto;
+    height: 550px;
     padding: 5px;
    
     overflow: auto;
+    position: relative;
 
      
 }
 
-.color-syntax {
-    color: green;
-    background-color: red;
-}
 
-.gay {
-background-color: blue;
-}
 
 </style>
 <script src="syntax.js"></script>
 <script>
 
-const animation = document.querySelector('#animation');
+const animation_code = document.querySelector('#animation-code-outer');
+const animation_render = document.querySelector('#animation-render-outer');
 const container = document.querySelector('#animation-container');
+
+let defaultorient =  {x:15, y:15};
+animation_code.style.transform = `rotateY(${defaultorient.x}deg) rotateX(${defaultorient.y}deg)`;
+animation_render.style.transform = `rotateY(${defaultorient.x}deg) rotateX(${defaultorient.y}deg)`;
+
+/*function isInViewport(el) {
+    const rect = el.getBoundingClientRect();
+    return (
+        rect.top >= 0 &&
+        rect.left >= 0 &&
+        rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+        rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+
+    );
+}
+
+
+
+document.addEventListener('wheel', (e) => {
+    if(isInViewport(animation)){
+    console.log('view')
+        if (Math.sign(e.deltaY) >= 0) {
+            defaultorient.x += 1;
+            defaultorient.y += 1;
+        }
+        else {
+            defaultorient.x -= 1;
+            defaultorient.y -= 1;
+        }
+    } 
+
+console.log(defaultorient)
+animation.style.transform = `rotateY(${defaultorient.x}deg) rotateX(${defaultorient.y}deg)`;
+
+});
 
 
 animation.addEventListener('mousemove', (e) => {
     let x = ((window.innerWidth / 2 - e.pageX)/100);
     let y =  ((window.innerHeight / 2 - e.pageY))/100;
-    animation.style.transform = `rotateY(${15+x}deg) rotateX(${15+y}deg)`;
+    animation.style.transform = `rotateY(${defaultorient.x+x}deg) rotateX(${defaultorient.y+y}deg)`;
     animation.style.boxShadow = `${-40 - x/2}px ${40 + y/2}px 60px gray`;
 });
 
 animation.addEventListener('mouseout', (e) => {
 console.log("out")
 })
-
+*/
 //when steps in
-animation.addEventListener('mouseenter', (e)=> {
-animation.style.transition = `none`;
+animation_code.addEventListener('mouseenter', (e)=> {
+animation_code.style.zIndex = `15`;
+animation_render.opacity = `1.0`;
 });
 
 
 
 //when steps outside
-animation.addEventListener('mouseleave', (e) => {
-    animation.style.transition = `all 0.5s ease`;
-    animation.style.transform = `rotateY(15deg) rotateX(15deg)`;
-    animation.style.boxShadow = `-40px 40px 60px gray`; 
+animation_code.addEventListener('mouseleave', (e) => {
+animation_code.style.zIndex = `5`;
+animation_render.opacity = `0.6`;
 });
 
 
@@ -119,21 +178,56 @@ var code = `        <!DOCTYPE html>
 
                     <html>
                     <head>
-                    <title>Title</title>
+                    <title>Cats Are Cool</title>
                     <meta content="stuff"/>
                     </head>
 
                     <body>
 
                     <div>
-                    <center><h1>Title</h1></center>
+                    <center><h1>How to Optimize Your Internet Presence With Loyae</h1></center>
 
                     <p>text text text</p>
-                    <img src="https://images.unsplash.com/photo-1529778873920-4da4926a72c2?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8Y3V0ZSUyMGNhdHxlbnwwfHwwfHw%3D&w=1000&q=80" height="200"/>
+                    <figure>
+                        <img class="floatImage" src="https://images.unsplash.com/photo-1529778873920-4da4926a72c2?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8Y3V0ZSUyMGNhdHxlbnwwfHwwfHw%3D&w=1000&q=80">
+                        <figcaption>Placeholder caption</figcaption>
+                    </figure>
+
+
                     <p>text text text</p>
                     </div>
 
-                    </body>`;
+                   
+                    </body>
+                    
+                    
+                    
+                    <!---->
+                    <style>
+                        .floatImage {
+                        box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.4);
+                        z-index: -1;
+                        position: relative;
+                        width: 100%;
+                        }
+
+                        figure {
+                        width: 25%;
+                        float: right;
+                        }
+
+                        figcaption {
+                        background-color: lightcoral;
+                        height: 1.2em;
+                        width: 100%;
+                        margin-top: -1.2em;
+                        float: right;
+                        text-align: center;
+                        color: white;
+                        z-index: 1;
+                        }
+
+                    </style>`;
 
 
 text.innerHTML = code;
@@ -150,6 +244,19 @@ var sanitized = element.innerHTML;
 
 
 w3CodeColor(document.getElementById("animation-code"));
+
+
+
+//animation loop
+
+//while(true){
+
+
+//go through optimization sequence
+//document.querySelector('#animation-render').backgroundColor = `red`;
+
+
+//}
 
 
 

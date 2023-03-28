@@ -1,0 +1,96 @@
+<p>Stuff and things
+<div id="container">
+<div id="text"></div>
+<div id="cursor"></div>
+<div id="clear"></div>
+</div>
+Things and stuff</p>
+<script>
+  // Text to type
+  var text = `<meta name="description" content="Written by A.N. Author, Illustrated by V. Gogh, Price: $17.99, Length: 784 pages">`;
+  // Reference to the text element
+  var textElement = document.getElementById("text");
+  // Type the text with a 50ms delay
+  function typeText() {
+    var i = 0;
+    var cursor = document.getElementById("cursor");
+    cursor.style.visibility = "visible";
+    cursor.style.animation = "blink 1s infinite";
+    var typing = setInterval(() => {
+      textElement.textContent += text[i];
+      i++;
+      if (i === text.length) {
+        clearInterval(typing);
+        cursor.style.animation = "";
+        cursor.style.width = "40px";
+        cursor.textContent = "Loyae";
+        setTimeout(hideCoolText, 3000);
+      }
+    }, 50);
+  }
+
+  // Hide the cool text
+  function hideCoolText() {
+    var cursor = document.getElementById("cursor");
+    cursor.style.visibility = "hidden";
+    cursor.textContent = "";
+    cursor.style.width = "10px";
+    cursor.style.animation = "blink 1s infinite";
+    setTimeout(deleteText, 1000);
+  }
+
+  // Delete the text with a 50ms delay
+  function deleteText() {
+    var i = text.length - 1;
+    var deleting = setInterval(() => {
+      textElement.textContent = textElement.textContent.slice(0, i);
+      i--;
+      if (i < 0) {
+        clearInterval(deleting);
+        setTimeout(typeText, 1000);
+      }
+    }, 50);
+  }
+
+  // Start the animation
+  typeText();
+</script>
+<style>
+  #text {
+    float: left;
+    background-color: lightcoral;
+}
+#cursor {
+  position: relative;
+  left: -10px;
+  width: 10px;
+  height: 16px;
+  background-color: lightcoral;
+  visibility: hidden;
+  border-radius: 3px;
+  margin-left: 12px;
+    float: left;
+   animation: blink 1s infinite;
+  color: white;
+  padding: 1px;
+}
+@keyframes blink {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+}
+} 
+  #container {
+    width: auto;
+    margin: auto;
+    border: 1px black solid;
+}
+#clear {
+    clear: both;
+}
+</style>

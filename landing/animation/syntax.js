@@ -11,7 +11,7 @@ function w3CodeColor(elmnt) {
     var textcolor = "white"
    
     elmntObj.style.fontFamily = "Consolas,'Courier New', monospace";
-    elmntTxt = `<div style="color:` + textcolor + `">` + htmlMode(elmntTxt) + `</div>`;
+    elmntTxt = `<div style="color:` + textcolor + `;">` + htmlMode(elmntTxt) + `</div>`;
     elmntObj.innerHTML = elmntTxt;
   
     function extract(str, start, end, func, repl) {
@@ -33,26 +33,18 @@ function w3CodeColor(elmnt) {
       this.arr = a;
     }
     function htmlMode(txt) {
-      var rest = txt, done = "",  comment, startpos, endpos, note, i;
+      var rest = txt, done = "",  comment, startpos, endpos,  i;
       comment = new extract(rest, "&lt;!--", "--&gt;", commentMode, "W3HTMLCOMMENTPOS");
       rest = comment.rest;
       while (rest.indexOf("&lt;") > -1) {
-        note = "";
         startpos = rest.indexOf("&lt;");
-        if (rest.substr(startpos, 9).toUpperCase() == "&LT;STYLE") {note = "css";}
-        if (rest.substr(startpos, 10).toUpperCase() == "&LT;SCRIPT") {note = "javascript";}        
+           
         endpos = rest.indexOf("&gt;", startpos);
         if (endpos == -1) {endpos = rest.length;}
         done += rest.substring(0, startpos);
         done += tagMode(rest.substring(startpos, endpos + 4));
         rest = rest.substr(endpos + 4);
-        if (note == "css") {
-          endpos = rest.indexOf("&lt;/style&gt;");
-          if (endpos > -1) {
-            done += cssMode(rest.substring(0, endpos));
-            rest = rest.substr(endpos);
-          }
-        }
+        
        
       }
       rest = done + rest;
@@ -78,6 +70,7 @@ function w3CodeColor(elmnt) {
       }
       return "<span style=color:" + tagnamecolor + ">" + result + "</span>";
     }
+
     function attributeMode(txt) {
       var rest = txt, done = "", startpos, endpos, singlefnuttpos, doublefnuttpos, spacepos;
       while (rest.indexOf("=") > -1) {
