@@ -240,10 +240,26 @@
 							<!--<a href="#" class="link mr-20 color-heading">
 								Sign In
 							</a>-->
-							<a href="https://tripetto.app/run/ETZVY7C3IT" class="sm action-1">
-								Newsletter Sign Up
+							<a class="sm action-1" id="discord-btn" href="https://discord.gg/rtaDgSYdQU">
+								<img src="landing/assets/discord.png" height="20px"/>
+								Discord Server
 							</a>
 						</div>
+						<style>
+						#discord-btn {
+							border: 0; 
+							border-radius: 10px;
+							background-color: #7289da; 
+							color: white; padding: 7px; box-shadow: lightgray 0px 0px 15px
+						}
+
+						#discord-btn:hover {
+							border: 0; 
+							border-radius: 10px;
+							background-color: #7289da; 
+							color: white; padding: 7px; box-shadow: lightgray 0px 0px 15px
+						}
+						</style>
 					</div>
 				</div>
 			</nav>
@@ -262,7 +278,7 @@
 				<!-- <span style="color: red;">Loyae is under maintenance this month!</span> -->
 				<form onsubmit="landingRequest()">
 					<div>
-						<input type="text" class="btn lg action-1 shadow-hover" placeholder="http://example.com/" style="color: white" id="landing-url-input"/>
+						<input type="text" class="btn lg action-1 shadow-hover" placeholder="http://example.com/" style="color: white;" id="landing-url-input"/>
 						
 						
 						<style>
@@ -297,12 +313,76 @@
 		</header>
 
 
+
+
 		<!-- Showcase 1 -->
 			<section class="pt-105 pb-95 bg-light showcase_1">
 		<center>
 			<img src="assets/demos/dashboard.jpg" height="30%" width="80%" id="display-dashboard" style="padding-bottom: 10px; background-color: #FAFAFA" alt="Loyae user dashboard/control panel"/>
 		</center>
 			</section>
+<script>
+						function joinwaitlist() {
+						//alert(document.getElementById('waitlist_email').value)
+						if(document.getElementById('waitlist_email').value==""){
+							alert("Please enter your name and email, then try again.")
+						}
+
+						fetch("https://api.loyae.com/waitlist?name="+document.getElementById('waitlist_name').value+"&email="+document.getElementById('waitlist_email').value+"&url="+document.getElementById('waitlist_site').value, {"method":"GET"}).then(response=>{
+								//check seperatly if api returns err=true
+									document.getElementById("waitlist_button").style.backgroundColor="lightgray";
+									document.getElementById("waitlist_button").innerHTML = "Joined!"
+								}).catch(err=>{
+									window.alert("Please enter your name and email, then try again.")
+								})
+							
+									
+					}
+
+</script>
+
+
+		<section class="pt-105 pb-45 bg-light text-center feature_2" id="features">
+					<div class="container px-xl-0">
+						<div class="row justify-content-center">
+							<div class="col-xl-8 col-lg-10">
+								<h2 class="small" data-aos="fade-down" data-aos-delay="0">
+									Waitlist
+								</h2>
+								
+							</div>
+							<br/><br/><br/>
+							<div>
+								<input type="text" id="waitlist_name" name="waitlist_name" placeholder="Name" class="waitlist-input">
+								<input type="text" id="waitlist_email" name="waitlist_email" placeholder="Email" class="waitlist-input">
+								<input type="text" id="waitlist_site" name="waitlist_site" placeholder="Site URL (optional)" class="waitlist-input">
+								<br/><br/>
+								<button id="waitlist-button" onclick="joinwaitlist()">Join</button>
+								<style>
+									.waitlist-input{
+										background-color: #fdf1f1;
+										border-radius: 10px;
+										padding: 7px;
+										
+									}
+									#waitlist-button {
+										background-color: lightcoral;
+										padding: 7px;
+										border-radius: 10px;
+										box-shadow: 0px 0px 15px lightcoral;
+										color: white;
+									}
+									#waitlist-button:hover {
+										box-shadow: 0px 0px 20px lightcoral ;
+									}
+								</style>
+							</div>
+						
+						</div>
+					</div>
+				</section>
+
+
 			<!-- Feature 2 -->
 				<section class="pt-105 pb-45 bg-light text-center feature_2" id="features">
 					<div class="container px-xl-0">
@@ -379,9 +459,6 @@
 									</a>
 									<a href="pages/dashboard.html" class="link color-main mx-20">
 										Launch
-									</a>
-									<a href="https://tripetto.app/run/ETZVY7C3IT" class="link color-main mx-20">
-										Newsletter
 									</a>
 									<a href="#" class="link color-main mx-20">
 										API
