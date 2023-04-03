@@ -118,7 +118,7 @@
 				</a>
 			</div>
 			<div>
-				<a href="pages/dashboard.html" class="f-heading f-22 link color-white mb-20">
+				<a href="https://app.loyae.com/diagnose?url=example.com" class="f-heading f-22 link color-white mb-20">
 					Launch
 				</a>
 			</div>
@@ -318,7 +318,11 @@
 		<!-- Showcase 1 -->
 			<section class="pt-105 pb-95 bg-light showcase_1">
 		<center>
-			<img src="assets/demos/dashboard.jpg" height="30%" width="80%" id="display-dashboard" style="padding-bottom: 10px; background-color: #FAFAFA" alt="Loyae user dashboard/control panel"/>
+			<video id="display-dashboard" style="padding-bottom: 10px; background-color: #FAFAFA; width: 80%;"  autoplay loop muted >
+			<source src="landing/assets/demo.mp4" type="video/mp4">
+			Your browser does not support the video tag.
+			</video>
+			
 		</center>
 			</section>
 <script>
@@ -327,12 +331,15 @@
 						if(document.getElementById('waitlist_email').value==""){
 							alert("Please enter your name and email, then try again.")
 						}
-
+						
+				
 						fetch("https://api.loyae.com/waitlist?name="+document.getElementById('waitlist_name').value+"&email="+document.getElementById('waitlist_email').value+"&url="+document.getElementById('waitlist_site').value, {"method":"GET"}).then(response=>{
 								//check seperatly if api returns err=true
-									document.getElementById("waitlist_button").style.backgroundColor="lightgray";
-									document.getElementById("waitlist_button").innerHTML = "Joined!"
+										document.getElementById("waitlist-button").style.backgroundColor="lightgray";
+										document.getElementById("waitlist-button").innerHTML = "Joined!"
+
 								}).catch(err=>{
+									window.alert(err)
 									window.alert("Please enter your name and email, then try again.")
 								})
 							
@@ -393,7 +400,7 @@
 								</h2>
 								<div class="mt-35 mb-65 f-22 color-heading text-adaptive description" data-aos="fade-down" data-aos-delay="250">
 									<p> Loyae is an intuitive API and web application that unleashes the power of natural language processing (NLP) for modern site optimization.  
-									    In addition to abstractly generating metadata that embodies the meaningful and relative context of your site, Loyae comes with a plethora of additional features... 
+									    In addition to abstractly generating metadata that embodies the meaningful and relative context of your site, Loyae comes with a plethora of additional features.
 									</p>
 								</div>
 							</div>
@@ -406,30 +413,26 @@
 										<div class="color-heading text-adaptive">
 											<p>Loyae returns insightful statistics  
                                             including: request speed, 
-											(imported)size, code validation, etc. </p>
+											file sizes, code validation, etc. </p>
 										</div>
 									</div>
 									<div class="mb-50 col-md-4 col-sm-8" data-aos="fade-down" data-aos-delay="750">
 										<div class="mb-20 f-18 medium title">
-											Bird's Eye View
+											AI-Generated Meta Tags and Alt Text
 										</div>
 										<div class="color-heading text-adaptive">
-											<p>Loyae provides you with a bird's eye
-                                            view of your site's current SEO
-                                            status with details such as your 
-                                            (OG)meta data, sitemap, and more! </p>
+											<p>Loyae uses advanced language and vision models 
+											to automatically generate meta descriptions, keywords, etc. 
+											and alt text for images</p>
 										</div>
 									</div>
 									<div class="mb-50 col-md-4 col-sm-8" data-aos="fade-down" data-aos-delay="1000">
 										<div class="mb-20 f-18 medium title">
-											Site Compression
+											Integrates Directly Into Your CMS
 										</div>
 										<div class="color-heading text-adaptive">
-											<p>Loyae's built-in compression algorithm 
-                                            is the cherry on top. 
-                                            Search engines rank websites that load faster, 
-                                            compressing your HTML is the first 
-                                            step in optimizing your site for speed. </p>
+											<p>Loyae integrates directly into your CMS as a plugin. 
+											Wordpress will support Loyae starting July 2023</p>
 											
 										</div>
 								</div>
