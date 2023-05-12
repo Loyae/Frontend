@@ -115,11 +115,6 @@
 				</a>
 			</div>
 			<div>
-				<a href="https://app.loyae.com/diagnose?url=example.com" class="f-heading f-22 link color-white mb-20">
-					Launch
-				</a>
-			</div>
-			<div>
 				<a href="#" class="f-heading f-22 link color-white mb-20">
 					API
 				</a>
@@ -130,13 +125,8 @@
 				</a>
 			</div>
 			<div>
-				<a href="https://tripetto.app/run/ETZVY7C3IT" class="f-heading f-22 link color-white mb-20">
-					Newsletter
-				</a>
-			</div>
-			<div>
 				<a href="https://blog.loyae.com" class="f-heading f-22 link color-white mb-20">
-						Blog
+					Blog
 				</a>
 			</div>
 			<!--<div>
@@ -212,7 +202,7 @@
 					<div class="row justify-content-center align-items-center f-18 medium">
 						<div class="col-lg-3 logo" data-aos="fade-down" data-aos-delay="1000">
 							<span>
-								<img src="assets/logos/logo.png" height="40px" style="margin-top: -4px;"/> Loyae <span style="font-weight: 200; font-size: 20px;">by John Lins</span>
+								<img src="assets/logos/logo.png" height="40px" style="margin-top: -4px;"/> Loyae <span style="font-weight: 200; font-size: 20px;">Beta</span>
 							</span>
 						</div>
 						<div class="col-lg-6 text-center" data-aos="fade-down" data-aos-delay="750">
@@ -262,20 +252,20 @@
 			</nav>
 			<div class="container">
 				<div class="mb-3 logo d-block d-xl-none text-center logo_mobile" data-aos="fade-down" data-aos-delay="0">
-					By John Lins
+					Introducing Loyae
 				</div>
 				<h1 class="big text-center" data-aos="fade-down" data-aos-delay="0" style="color: black;">
-					Introducing Loyae
+					A CMS Plugin For Automatic Technical SEO
 				</h1>
 				<div class="mw-600 mx-auto mt-30 f-22 color-heading text-center text-adaptive" data-aos="fade-down" data-aos-delay="250">
-					<p> Seamlessly using machine learning to optimize web pages for searchability (SEO), usability, and accessibility</p>
+					<p> Seamlessly using machine learning to optimize web pages for searchability, usability, and accessibility</p>
 				</div>
 				<div class="mt-80 text-center buttons" data-aos="fade-down" data-aos-delay="500">
 				<span id="no-url-error" style="color: red;"></span>
 				<!-- <span style="color: red;">Loyae is under maintenance this month!</span> -->
 				<form onsubmit="landingRequest()">
 					<div>
-						<input type="text" class="btn lg action-1 shadow-hover" placeholder="http://example.com/" style="color: white;" id="landing-url-input"/>
+						<input type="text" class="btn lg action-1 shadow-hover" placeholder="http://example.com/" id="landing-url-input"/>
 						
 						
 						<style>
@@ -283,6 +273,16 @@
 						::placeholder {
 						color: #e3bfbf;
 						}
+
+						input:focus::placeholder {
+						color: transparent;
+						}
+
+									#landing-url-input{
+										background-color: #fdf1f1;
+										border-radius: 10px;
+										color: black;
+									}
 						</style>
 						<br/><br/>
 					</div>
@@ -290,7 +290,7 @@
 					<div>
 
 						
-						<input id="launch" value="Launch" class="btn lg action-1 shadow-hover" type="submit">
+						<input id="launch" value="Launch" class="btn lg action-1 shadow-hover" style="border-radius: 10px;" type="submit">
 						<!--	Launch
 						</button>-->
 
@@ -432,7 +432,7 @@
 										</div>
 										<div class="color-heading text-adaptive">
 											<p>Loyae integrates directly into your CMS as a plugin. 
-											Wordpress will support Loyae starting July 2023</p>
+											WordPress will support Loyae starting July 2023</p>
 											
 										</div>
 								</div>
