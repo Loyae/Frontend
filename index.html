@@ -168,10 +168,10 @@
 					<i class="fab fa-github">
 					</i>
 				</a>
-				<a href="#" target="_blank" class="link color-white f-18 mr-20">
+				<!--<a href="#" target="_blank" class="link color-white f-18 mr-20">
 					<i class="fab fa-angellist">
 					</i>
-				</a>
+				</a>-->
 				<br/>
 				<br/>
 				<a href="https://www.linkedin.com/company/loyae" target="_blank" class="link color-white f-18 mr-20">
@@ -182,10 +182,10 @@
 					<i class="fab fa-discord">
 					</i>
 				</a>
-				<a href="https://loyae.slack.com/" target="_blank" class="link color-white f-18 mr-20">
+				<!--<a href="https://loyae.slack.com/" target="_blank" class="link color-white f-18 mr-20">
 					<i class="fab fa-slack">
 					</i>
-				</a>
+				</a>-->
 			</div>
 			<div class="mt-50 f-14 light color-white op-3 copy">
 				© <span id="year"></span> Loyae. All rights reserved.
@@ -353,7 +353,58 @@
 								<h2 class="small" data-aos="fade-down" data-aos-delay="0">
 									Waitlist
 								</h2>
+								<br/>
+								<div id="countdown">WordPress Plugin (Early Access) Releases In <b><span class="days"></span> days : <span class="hours"></span> hours : <span class="minutes"></span> minutes : <span class="seconds"></span> seconds </b></div>
+
+								<script>
+										
+
+
+								function getTimeRemaining(endtime) {
+									const total = Date.parse(endtime) - Date.parse(new Date());
+									const seconds = Math.floor((total / 1000) % 60);
+									const minutes = Math.floor((total / 1000 / 60) % 60);
+									const hours = Math.floor((total / (1000 * 60 * 60)) % 24);
+									const days = Math.floor(total / (1000 * 60 * 60 * 24));
+									
+									return {
+									total,
+									days,
+									hours,
+									minutes,
+									seconds
+									};
+								}
 								
+								function initializeClock(id, endtime) {
+									const clock = document.getElementById(id);
+									const daysSpan = clock.querySelector('.days');
+									const hoursSpan = clock.querySelector('.hours');
+									const minutesSpan = clock.querySelector('.minutes');
+									const secondsSpan = clock.querySelector('.seconds');
+								
+									function updateClock() {
+									const t = getTimeRemaining(endtime);
+								
+									daysSpan.innerHTML = t.days;
+									hoursSpan.innerHTML = ('0' + t.hours).slice(-2);
+									minutesSpan.innerHTML = ('0' + t.minutes).slice(-2);
+									secondsSpan.innerHTML = ('0' + t.seconds).slice(-2);
+								
+									if (t.total <= 0) {
+										clearInterval(timeinterval);
+									}
+									}
+								
+									updateClock();
+									const timeinterval = setInterval(updateClock, 1000);
+								}
+								
+								const deadline = new Date(Date.parse("july 6, 2023 01:30:00"));
+								initializeClock('countdown', deadline);    
+								</script>
+
+								<br/>
 							</div>
 							<br/><br/><br/>
 							<div id="waitlist">
