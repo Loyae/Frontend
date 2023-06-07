@@ -16,7 +16,25 @@
 
 #launch {
     background-color: lightcoral;
+    margin-left: 10px;
 }
+
+#launch-br{
+     display: none;   
+}
+
+
+@media only screen and (max-width: 600px) {
+    #launch-br{
+        display: block;
+    }
+    #launch {
+        margin-left: 0px;
+    }
+    
+}
+
+
 
 /*#arrow {
     visibility: hidden;
