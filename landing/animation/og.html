@@ -1,11 +1,99 @@
+
+
+<center>Things and stuff here</center>
+<br/>
+<center>Things and stuff here</center>
+<center>Things and stuff here</center>
+<br/>
+<center>Things and stuff here</center>
+<center>Things and stuff here</center>
+<br/>
+<center>Things and stuff here</center>
+<br/>
+
+<style>
+#social-anim {
+width: 60%;
+height: auto;
+float: right;
+}
+
+.inner {
+box-sizing: border-box;
+position: relative;
+width: 500px;
+}
+
+.inner .social-logo {
+width: 58px;
+height: 58px;
+
+}
+
+.inner .social-logo-box {
+margin-left: 230px;
+z-index: 100;
+margin-bottom: -20px;
+}
+
+#social-code {
+width: 38%;
+height: auto;
+float: left;
+border-radius: 7px;
+box-shadow: 0px 0px 15px lightgray;
+margin-top: 80px;
+margin-left: 10px;
+background-color: black;
+color: white;
+padding: 10px;
+}
+
+.ease {
+transition: all 3.4s ease;
+}
+</style>
+
+<div id="whole-animation">
+<div id="social-code" class="ease">
+<span id="code-above"></span>
+<span id="code-meta"></span>
+<span id="code-below"></span>
+</div>
+
+<script>
+
+  document.getElementById('code-above').textContent = "<html><head>";
+  document.getElementById('code-below').textContent = "</head><body></body></html>";
+  var meta = document.getElementById('code-meta');
+
+  setTimeout(function() {
+      meta.textContent =  '<p>This is the code you want to insert.</p>';
+      meta.innerHTML +=  '</br>>';
+    }, 2000);
+
+    setTimeout(function() {
+      meta.textContent +=  '<p>This e code you want to insert.</p>';
+      meta.innerHTML +=  '</br>>';
+    }, 4000);
+
+
+</script>
+<div id="social-anim">
+
 <!-- Discord -->
+<div class="inner">
+<div class="social-logo-box">
+<img src="https://www.pngall.com/wp-content/uploads/13/Discord-Logo-PNG-Cutout.png" class="social-logo"/>
+</div>
 <div id="discord">
+
 <div class="discord-message">
     
     <div class="message-content">
-        <span class="discord-username"><img class="user-pfp" src="https://www.loyae.com/assets/logos/logo.png" alt="User Profile Picture"/>user <span id="discord-time">Today at 3:30pm</span></span><br/>
+        <span class="discord-username"><img class="user-pfp" src="https://cdn.logojoy.com/wp-content/uploads/20210422095037/discord-mascot.png" alt="User Profile Picture"/>user <span id="discord-time">Today at 3:30pm</span></span><br/>
         <div id="inner-message">
-        <span>https://loyae.com</span>
+        <span style="color:#649cf5">https://loyae.com</span>
         <div class="og-content">
             
             <a class="og-link">
@@ -21,15 +109,118 @@
     </div>
 </div>
 </div>
+</div>
+
+
+
+
+
+
+  <!--Google-->
+  <div class="inner" style="top: -200px; left: 250px">
+  <div class="social-logo-box">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c1/Google_%22G%22_logo.svg/150px-Google_%22G%22_logo.svg.png" class="social-logo"/>
+  <img src="https://pbs.twimg.com/profile_images/1313103135414448128/0EVE9TeW_400x400.png" class="social-logo"/>
+  <img src="https://upload.wikimedia.org/wikipedia/en/9/90/The_DuckDuckGo_Duck.png" class="social-logo"/>
+   <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/80/Yandex_Browser_logo.svg/2048px-Yandex_Browser_logo.svg.png" class="social-logo"/>
+  </div>
+  <div id="search">
+  <br/>
+   <div class="search-result">
+    <div class="title"><img src="https://www.loyae.com/assets/logos/logo.png" alt="Favicon" class="search-favicon"> Example Website 3</div>
+    <div class="url">www.example3.com</div>
+    <div class="description">Description for the third result in the Google search.</div>
+    <img src="https://www.loyae.com/assets/logos/logo.png" alt="Open Graph Image" class="open-graph-image" width="80" height="80">
+  </div>
+
+  <div class="search-result">
+    <div class="title"><img src="https://www.loyae.com/assets/logos/logo.png" alt="Favicon" class="search-favicon"> Example Website 3</div>
+    <div class="url">www.example3.com</div>
+    <div class="description">Description for the third result in the Google search.</div>
+    <img src="https://www.loyae.com/assets/logos/logo.png" alt="Open Graph Image" class="open-graph-image" width="80" height="80">
+  </div>
+
+  <div class="search-result">
+    <div class="title"><img src="https://www.loyae.com/assets/logos/logo.png" alt="Favicon" class="search-favicon"> Competitor</div>
+    <div class="url">www.example3.com</div>
+    <div class="description">Description for the third result in the Google search.</div>
+    <img src="https://www.loyae.com/assets/logos/logo.png" alt="Open Graph Image" class="open-graph-image" width="80" height="80">
+  </div>
+
+    <div class="search-result">
+    <div class="title"><img src="https://www.loyae.com/assets/logos/logo.png" alt="Favicon" class="search-favicon"> Example Website 3</div>
+    <div class="url">www.example3.com</div>
+    <div class="description">Description for the third result in the Google search.</div>
+    <img src="https://www.loyae.com/assets/logos/logo.png" alt="Open Graph Image" class="open-graph-image" width="80" height="80">
+  </div>
+
+</div>
+</div>
+
+
+
+
+
+
+<!--twitter-->
+<div class="inner" style="top: -320px;">
+<div class="social-logo-box">
+<img src="https://seeklogo.com/images/T/twitter-icon-square-logo-108D17D373-seeklogo.com.png" class="social-logo"/>
+<img src="https://static.dezeen.com/uploads/2023/07/x-logo-twitter-elon-musk_dezeen_2364_col_0.jpg" class="social-logo"/>
+</div>
+<div id="twitter">
+ <div class="tweet">
+    <div class="pfp"></div>
+    <div class="tweet-content">
+      <div class="username">YourUsername</div>
+      <div class="tweet-text">Your tweet text here. This tweet contains a Twitter card:</div>
+      <div class="twitter-icons">
+        <!-- Add Twitter icons (reply, retweet, like) here -->
+      </div>
+      <div class="twitter-card">
+        <div class="card-image"> <!-- Replace 'image-url.jpg' with the URL to your Open Graph image --> <img src="https://www.loyae.com/assets/logos/logo.png" alt="Card Image"> </div> <div class="card-content"> <!-- Replace with your Open Graph title and description --> <div class="card-title">Your Open Graph Title</div> <div class="card-description">Your Open Graph Description goes here. Keep it concise.</div> <!-- Replace 'yourwebsite.com' with the actual URL of your page --> <div class="card-url"><a href="https://yourwebsite.com/" target="_blank">yourwebsite.com</a></div> </div>
+        <!-- Add Twitter card components here (title, image, URL, description) -->
+      </div>
+    </div>
+  </div>
+  </div>
+</div>
+
+
+<!--messages-->
+<div class="inner" style="top: -500px;left: 300px">
+<div style="z-index: 100; margin-bottom: -20px;">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c1/Google_%22G%22_logo.svg/150px-Google_%22G%22_logo.svg.png" class="social-logo"/>
+  <img src="https://pbs.twimg.com/profile_images/1313103135414448128/0EVE9TeW_400x400.png" class="social-logo"/>
+  <img src="https://upload.wikimedia.org/wikipedia/en/9/90/The_DuckDuckGo_Duck.png" class="social-logo"/>
+   <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/80/Yandex_Browser_logo.svg/2048px-Yandex_Browser_logo.svg.png" class="social-logo"/>
+   <div>
+
+   <div id="phone">
+<img src="phone.png" height="500px"/>
+</div>
+
+</div>
+
+
+
+<div>
+
+<div>
 
 <style>
+#phone {
+background-color: gray;
+border-radius: 40px;
+}
+</style>
+
+  <style>
 #discord {
     font-family: Arial, sans-serif;
-    
     margin: 0;
-    margin: 50px;
     display: block;
-    
+    left: 300px;
     border-radius: 50%;
 }
 
@@ -85,7 +276,7 @@ color: #949ba4;
 
 .theme-color-bar {
     width: 12px;
-    height: 250px;
+    height: 270px;
     background-color: #7289da; /* Discord theme color */
     margin-right: 10px;
     border-top-left-radius: 5px;
@@ -121,29 +312,10 @@ padding: 10px;
 </style>
 
 
-<!--twitter-->
-<div id="twitter">
- <div class="tweet">
-    <div class="pfp"></div>
-    <div class="tweet-content">
-      <div class="username">YourUsername</div>
-      <div class="tweet-text">Your tweet text here. This tweet contains a Twitter card:</div>
-      <div class="twitter-icons">
-        <!-- Add Twitter icons (reply, retweet, like) here -->
-      </div>
-      <div class="twitter-card">
-        <div class="card-image"> <!-- Replace 'image-url.jpg' with the URL to your Open Graph image --> <img src="https://www.loyae.com/assets/logos/logo.png" alt="Card Image"> </div> <div class="card-content"> <!-- Replace with your Open Graph title and description --> <div class="card-title">Your Open Graph Title</div> <div class="card-description">Your Open Graph Description goes here. Keep it concise.</div> <!-- Replace 'yourwebsite.com' with the actual URL of your page --> <div class="card-url"><a href="https://yourwebsite.com/" target="_blank">yourwebsite.com</a></div> </div>
-        <!-- Add Twitter card components here (title, image, URL, description) -->
-      </div>
-    </div>
-  </div>
-  </div>
-
-
   <style>
     #twitter {
       font-family: Arial, sans-serif;
-      width: 500px;
+      width: 350px;
     }
 
     .tweet {
@@ -151,7 +323,6 @@ padding: 10px;
       padding: 10px;
       border: 1px solid #ccd6dd;
       border-radius: 8px;
-      margin: 20px;
       background-color: #ffffff;
     }
 
@@ -231,32 +402,6 @@ padding: 10px;
 }
   </style>
 
-
-  <!--Google-->
-  <div id="search">
-   <div class="search-result">
-    <div class="title"><img src="https://www.loyae.com/assets/logos/logo.png" alt="Favicon" class="search-favicon"> Example Website 3</div>
-    <div class="url">www.example3.com</div>
-    <div class="description">Description for the third result in the Google search.</div>
-    <img src="https://www.loyae.com/assets/logos/logo.png" alt="Open Graph Image" class="open-graph-image" width="80" height="80">
-  </div>
-
-  <div class="search-result">
-    <div class="title"><img src="https://www.loyae.com/assets/logos/logo.png" alt="Favicon" class="search-favicon"> Example Website 3</div>
-    <div class="url">www.example3.com</div>
-    <div class="description">Description for the third result in the Google search.</div>
-    <img src="https://www.loyae.com/assets/logos/logo.png" alt="Open Graph Image" class="open-graph-image" width="80" height="80">
-  </div>
-
-  <div class="search-result">
-    <div class="title"><img src="https://www.loyae.com/assets/logos/logo.png" alt="Favicon" class="search-favicon"> Example Website 3</div>
-    <div class="url">www.example3.com</div>
-    <div class="description">Description for the third result in the Google search.</div>
-    <img src="https://www.loyae.com/assets/logos/logo.png" alt="Open Graph Image" class="open-graph-image" width="80" height="80">
-  </div>
-
-</div>
-
   <style>
   #search {
       font-family: Arial, sans-serif;
@@ -264,7 +409,8 @@ padding: 10px;
       margin: 0;
       padding: 10px;
       width: 450px;
-      border-radius: 10px
+      border-radius: 10px;
+      top: -400px;
     }
 
     .search-result {
@@ -297,6 +443,7 @@ padding: 10px;
       max-width: 80px;
       max-height: 80px;
       border-radius: 8px;
+      margin-top: -75px;
     }
 
     .search-favicon {
