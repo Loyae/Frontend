@@ -12,8 +12,10 @@
 <br/>
 
 <style>
+
+
 #social-anim {
-width: 60%;
+width: 50%;
 height: auto;
 float: right;
 }
@@ -22,6 +24,7 @@ float: right;
 box-sizing: border-box;
 position: relative;
 width: 500px;
+display: none;
 }
 
 .inner .social-logo {
@@ -37,13 +40,12 @@ margin-bottom: -20px;
 }
 
 #social-code {
-width: 38%;
+width: 300px;
 height: auto;
-float: left;
+float: right;
 border-radius: 7px;
 box-shadow: 0px 0px 15px lightgray;
 margin-top: 80px;
-margin-left: 10px;
 background-color: black;
 color: white;
 padding: 10px;
@@ -61,28 +63,11 @@ transition: all 3.4s ease;
 <span id="code-below"></span>
 </div>
 
-<script>
 
-  document.getElementById('code-above').textContent = "<html><head>";
-  document.getElementById('code-below').textContent = "</head><body></body></html>";
-  var meta = document.getElementById('code-meta');
-
-  setTimeout(function() {
-      meta.textContent =  '<p>This is the code you want to insert.</p>';
-      meta.innerHTML +=  '</br>>';
-    }, 2000);
-
-    setTimeout(function() {
-      meta.textContent +=  '<p>This e code you want to insert.</p>';
-      meta.innerHTML +=  '</br>>';
-    }, 4000);
-
-
-</script>
 <div id="social-anim">
 
 <!-- Discord -->
-<div class="inner">
+<div class="inner" id="soc-2">
 <div class="social-logo-box">
 <img src="https://www.pngall.com/wp-content/uploads/13/Discord-Logo-PNG-Cutout.png" class="social-logo"/>
 </div>
@@ -117,7 +102,7 @@ transition: all 3.4s ease;
 
 
   <!--Google-->
-  <div class="inner" style="top: -200px; left: 250px">
+  <div class="inner" id="soc-1">
   <div class="social-logo-box">
   <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c1/Google_%22G%22_logo.svg/150px-Google_%22G%22_logo.svg.png" class="social-logo"/>
   <img src="https://pbs.twimg.com/profile_images/1313103135414448128/0EVE9TeW_400x400.png" class="social-logo"/>
@@ -163,7 +148,7 @@ transition: all 3.4s ease;
 
 
 <!--twitter-->
-<div class="inner" style="top: -320px;">
+<div class="inner" id="soc-3">
 <div class="social-logo-box">
 <img src="https://seeklogo.com/images/T/twitter-icon-square-logo-108D17D373-seeklogo.com.png" class="social-logo"/>
 <img src="https://static.dezeen.com/uploads/2023/07/x-logo-twitter-elon-musk_dezeen_2364_col_0.jpg" class="social-logo"/>
@@ -188,16 +173,13 @@ transition: all 3.4s ease;
 
 
 <!--messages-->
-<div class="inner" style="top: -500px;left: 300px">
-<div style="z-index: 100; margin-bottom: -20px;">
-  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c1/Google_%22G%22_logo.svg/150px-Google_%22G%22_logo.svg.png" class="social-logo"/>
-  <img src="https://pbs.twimg.com/profile_images/1313103135414448128/0EVE9TeW_400x400.png" class="social-logo"/>
-  <img src="https://upload.wikimedia.org/wikipedia/en/9/90/The_DuckDuckGo_Duck.png" class="social-logo"/>
-   <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/80/Yandex_Browser_logo.svg/2048px-Yandex_Browser_logo.svg.png" class="social-logo"/>
-   <div>
+<div class="inner" id="soc-4">
+
 
    <div id="phone">
+
 <img src="phone.png" height="500px"/>
+
 </div>
 
 </div>
@@ -209,9 +191,10 @@ transition: all 3.4s ease;
 <div>
 
 <style>
-#phone {
+#phone img{
 background-color: gray;
 border-radius: 40px;
+width: auto;
 }
 </style>
 
@@ -458,3 +441,82 @@ margin: 0;
 padding: 0;
 }
   </style>
+
+
+  <script>
+   var soc = ['soc-1', 'soc-2', 'soc-3', 'soc-4']
+/*
+for (var i = 0; i < soc.length; i++) {
+  (function(index) {
+    setTimeout(function() {
+
+      document.getElementById(soc[(index == 0) ? soc.length-1 : index-1]).style.display = 'none';
+
+      document.getElementById(soc[index]).style.display = "block";
+
+
+    }, 2000 * (index + 1)); // Adjust the delay as needed
+  })(i);
+}*/
+
+  document.getElementById('code-above').textContent = "<html>";
+  document.getElementById('code-above').innerHTML += "</br></br>";
+  document.getElementById('code-above').textContent += "<head>";
+  document.getElementById('code-below').textContent = "</head><body></body></html>";
+
+
+var currentIndex = 0;
+
+function toggleElements() {
+
+
+  var meta = document.getElementById('code-meta');
+
+
+      meta.textContent =  '<p>This is the code you want to insert.</p>';
+      meta.innerHTML +=  '</br>>';
+
+
+      meta.textContent +=  '<p>This e code you want to insert.</p>';
+      meta.innerHTML +=  '</br>>';
+
+
+
+      meta.textContent = ""
+
+
+  document.getElementById(soc[currentIndex]).style.display = 'none';
+
+
+  currentIndex = (currentIndex + 1) % soc.length;
+
+  document.getElementById(soc[currentIndex]).style.display = 'block';
+
+}
+
+// Initial display
+document.getElementById(soc[currentIndex]).style.display = 'block';
+
+// Set interval to toggle elements every 2000 milliseconds (2 seconds)
+setInterval(toggleElements, 5000);
+
+
+
+
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
