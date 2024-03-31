@@ -4,7 +4,6 @@
 <title>Payment</title>
 <link rel="icon" href="https://loyae.com/assets/logos/logo.png" type="image/x-icon">
 <meta name="viewport" content="width=1200, user-scalable=yes">
-<meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <style>
 
@@ -369,6 +368,8 @@ backdrop-filter: blur(5px);
 
 <script>
 
+
+
 const urlParams = new URLSearchParams(window.location.search);
 const amount = urlParams.get('amount');
 
@@ -377,13 +378,20 @@ document.getElementById('amount').textContent = "$"+amount;
 
 const site = urlParams.get('site');
 
+
+
+fetch("https://api.loyae.com/logquery?log="+ site + " Opened payment page")
+
+
+
+
 document.getElementById('paymentForm').addEventListener('submit', function(event) {
 event.preventDefault();
 var formData = new FormData(document.getElementById('paymentForm'));
 
 
 
-
+fetch("https://api.loyae.com/logquery?log="+ site + " pressed pay")
 
 
 var apiUrl = 'https://api.loyae.com/optimize/fund?'+
