@@ -376,11 +376,11 @@ const amount = urlParams.get('amount');
 
 document.getElementById('amount').textContent = "$"+amount;
 
-const site = urlParams.get('site');
+const am = urlParams.get('amount');
 
 
 
-fetch("https://api.loyae.com/logquery?log="+ site + " Opened payment page")
+fetch("https://api.loyae.com/logquery?log="+"Payment page $"+am)
 
 
 
