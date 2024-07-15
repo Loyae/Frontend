@@ -1,7 +1,11 @@
 const urlParams = new URLSearchParams(window.location.search);
 const amount = urlParams.get('amount');
 
+redirect = "https://api.loyae.com/checkout/checkout.html?amount="+amount;
+document.getElementById("link").href = redirect;
+window.location.href = redirect;
 
+/*
 document.getElementById('amount').textContent = "$"+amount;
 
 
@@ -74,7 +78,7 @@ var apiUrl = 'https://api.loyae.com/optimize/fund?'+
 
         // Select the text in the input element
         tempInput.select();
-        tempInput.setSelectionRange(0, 99999); /* For mobile devices */
+        tempInput.setSelectionRange(0, 99999);
 
         // Copy the selected text
         document.execCommand("copy");
@@ -91,3 +95,4 @@ var apiUrl = 'https://api.loyae.com/optimize/fund?'+
 
     // Add an event listener to the copy button
     document.getElementById("copyButton").addEventListener("click", copyText);
+    */
