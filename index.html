@@ -524,6 +524,234 @@
 				</section>
 
 
+
+
+
+
+
+
+
+
+
+						<section class="pt-105 pb-45 bg-light text-center feature_2" id="features">
+					<div class="container px-xl-0">
+						<div class="row justify-content-center">
+							<div class="col-xl-8 col-lg-10">
+
+
+
+
+
+
+							<center>
+    <style>
+
+
+        .calculator {
+            background: #f08080;
+            border-radius: 20px;
+            padding: 20px;
+            box-shadow: 0 15px 15px lightgray;
+            width: 100%;
+        }
+
+        .calculator h2 {
+            margin: 0;
+            color: #fff;
+        }
+
+        .slider-container, .checkbox-container {
+            margin-top: 20px;
+            position: relative;
+        }
+
+        .slider-label, .checkbox-label {
+            font-weight: bold;
+            color: #fff;
+        }
+
+        .slider {
+            width: 100%;
+            margin-top: 10px;
+            -webkit-appearance: none;
+            appearance: none;
+            background: #ddd;
+            height: 8px;
+            border-radius: 10px;
+            outline: none;
+            cursor: pointer;
+        }
+
+        .slider::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 30px;
+            height: 30px;
+            background: #fff;
+            border: 2px solid #f08080;
+            border-radius: 50%;
+            cursor: pointer;
+        }
+
+        .slider::-moz-range-thumb {
+            width: 30px;
+            height: 30px;
+            background: #fff;
+            border: 2px solid #f08080;
+            border-radius: 50%;
+        }
+
+        .slider-value {
+            position: absolute;
+            top: 23px; /* Adjust this to position above the slider */
+            background: white;
+            color: #f08080;
+            font-weight: bold;
+            padding: 5px;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            text-align: center;
+            line-height: 30px;
+            transform: translateX(-50%);
+        }
+
+        .checkbox-container label {
+            display: block;
+            margin-top: 10px;
+            font-weight: normal;
+            color: #fff;
+        }
+
+        .price-display {
+            margin-top: 20px;
+            font-weight: bold;
+
+            color: white;
+            padding: 15px;
+            font-size: 1.5em;
+            text-align: center;
+        }
+    </style>
+
+    <div class="calculator">
+        <h2>Price Calculator</h2>
+
+        <div class="slider-container">
+            <label for="images" class="slider-label" style="float:left">Images per page ($0.03 per alt text):</label>
+         <br/><br/><br/><br/>
+            <input type="range" id="images" class="slider" min="0" max="50" value="1">
+            <div class="slider-value" id="images-value">0</div>
+        </div>
+
+        <div class="checkbox-container">
+            <label>
+                <input type="checkbox" id="description-tags" checked> Description meta tags ($0.035 × 3)
+            </label>
+
+            <label>
+                <input type="checkbox" id="open-graph-tags"> Open Graph meta tags ($0.005 × 9)
+            </label>
+            <label>
+                <input type="checkbox" id="twitter-tags"> Twitter (X) meta tags ($0.005 × 5)
+            </label>
+            <label>
+                <input type="checkbox" id="miscellaneous-tags"> Style tags ($0.005 × 4)
+            </label>
+        </div>
+
+        <div class="slider-container">
+            <label for="pages" class="slider-label"style="float:left">Number of pages:</label>
+          <br/><br/><br/><br/>
+            <input type="range" id="pages" class="slider" min="1" max="100" value="5">
+            <div class="slider-value" id="pages-value">1</div>
+        </div>
+
+        <div class="price-display">
+            $<span id="total-price">0.00</span> one-time fee
+        </div>
+    </div>
+
+    <script>
+        const imagesSlider = document.getElementById('images');
+        const imagesValue = document.getElementById('images-value');
+        const descriptionTags = document.getElementById('description-tags');
+        const openGraphTags = document.getElementById('open-graph-tags');
+        const twitterTags = document.getElementById('twitter-tags');
+        const miscellaneousTags = document.getElementById('miscellaneous-tags');
+        const pagesSlider = document.getElementById('pages');
+        const pagesValue = document.getElementById('pages-value');
+        const totalPriceDisplay = document.getElementById('total-price');
+
+        function calculatePrice() {
+            const imagesPerPage = parseInt(imagesSlider.value, 10);
+            const pages = parseInt(pagesSlider.value, 10);
+
+            let pricePerPage = imagesPerPage * 0.03;
+
+            if (descriptionTags.checked) pricePerPage += 0.035 * 3;
+            if (openGraphTags.checked) pricePerPage += 0.005 * 9;
+            if (twitterTags.checked) pricePerPage += 0.005 * 5;
+            if (miscellaneousTags.checked) pricePerPage += 0.005 * 4;
+
+            const totalPrice = pricePerPage * pages;
+            totalPriceDisplay.textContent = totalPrice.toFixed(2);
+        }
+
+        function updateSliderValue(slider, valueDisplay) {
+            const value = slider.value;
+            valueDisplay.textContent = value;
+            const percentage = ((value - slider.min) / (slider.max - slider.min)) * 100;
+            valueDisplay.style.left = `calc(${percentage}% + (${8 - percentage * 0.16}px))`;
+        }
+
+        imagesSlider.addEventListener('input', () => {
+            updateSliderValue(imagesSlider, imagesValue);
+            calculatePrice();
+        });
+
+        pagesSlider.addEventListener('input', () => {
+            updateSliderValue(pagesSlider, pagesValue);
+            calculatePrice();
+        });
+
+        descriptionTags.addEventListener('change', calculatePrice);
+        openGraphTags.addEventListener('change', calculatePrice);
+        twitterTags.addEventListener('change', calculatePrice);
+        miscellaneousTags.addEventListener('change', calculatePrice);
+
+        // Initialize with default values
+        updateSliderValue(imagesSlider, imagesValue);
+        updateSliderValue(pagesSlider, pagesValue);
+        calculatePrice();
+    </script>
+
+</center>
+
+
+
+
+
+
+								<br/>
+							</div>
+							<br/><br/><br/>
+
+
+						</div>
+					</div>
+				</section>
+
+
+
+
+
+
+
+
+
+
+
 			<!-- Feature 2 -->
 				<section class="pt-105 pb-45 bg-light text-center feature_2" id="features">
 					<div class="container px-xl-0">
