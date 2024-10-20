@@ -600,10 +600,13 @@
             border: 2px solid #f08080;
             border-radius: 50%;
         }
+        #total-price{
+			color: green;
+        }
 
         .slider-value {
             position: absolute;
-            top: 23px; /* Adjust this to position above the slider */
+            top: 43px; /* Adjust this to position above the slider */
             background: white;
             color: #f08080;
             font-weight: bold;
@@ -634,7 +637,7 @@
         }
     </style>
 
-    <div class="calculator">
+    <div class="calculator" id="calc">
         <h2>Price Calculator</h2>
 
         <div class="slider-container">
@@ -668,7 +671,7 @@
         </div>
 
         <div class="price-display">
-            $<span id="total-price">0.00</span> one-time fee
+            <b><span style="color: green">$</span><span id="total-price">0.00</span></b> one-time fee
         </div>
     </div>
 
@@ -815,7 +818,7 @@
 						</div>
 					</div>
 <br/><br/><br/><br/>
-					<div class="container px-xl-0">
+					<!--<div class="container px-xl-0">
 						<div class="row justify-content-center">
 							<div class="col-xl-8 col-lg-10">
 								<h2 class="small" data-aos="fade-down" data-aos-delay="0">
@@ -835,7 +838,7 @@
 								</style>
 							</div>
 						</div>
-					</div>
+					</div>-->
 					</section>
 
 
